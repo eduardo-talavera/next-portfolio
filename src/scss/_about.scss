@@ -1,0 +1,115 @@
+#about{
+
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+
+  background: $background;
+  width: 100%;
+
+  p {
+    color: $white80;
+    line-height: 1.7;
+    font-size: 17px;
+    font-weight: 400;
+  }
+
+  .avatar-efect {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .about-img{
+      position: relative;
+      padding: 10px;
+      width: 300px;
+      z-index: 2;
+      background-color: white;
+    }
+    
+    .box{
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      background-color: #25b7fa;
+      top:0;
+      transform: rotate(-10deg);
+    }
+  }
+
+
+  @media (max-width: 540px) {
+    .text-about {
+       text: {
+         align: center;
+       }
+    }
+    .avatar-efect {
+      margin: auto;
+     .about-img{
+       width: 250px;
+     }
+     .box{
+       width: 250px;
+       height: 250px;
+     }
+   }
+   }
+   
+   
+   @media (max-width: 320px) {
+     .avatar-efect {
+      margin: auto; 
+      .about-img{
+        width: 200px;
+      }
+      .box{
+        width: 200px;
+        height: 200px;
+      }
+    }
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+ #about {
+   padding-top: 0;
+ }
+}
+
+.text-about {
+  font-size: 19px;
+  color: #a5a8ad;
+}
+
+.saturate {
+  filter: saturate(0.5);
+}
+
+.wabe_head {
+  &::before {
+    mask: url('../static/img/wave-head.svg');
+    mask-repeat: no-repeat;
+    height: 300px;
+    margin-top: -300px;
+    content: "";
+    display: block;
+    position: relative;
+    left: 0px;
+    right: 0px;
+    background-color: $background;
+    background-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+    -webkit-mask-position-y: bottom;
+  }
+}
+
+
+
+ 

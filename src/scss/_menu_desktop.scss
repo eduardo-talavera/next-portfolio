@@ -1,0 +1,17 @@
+#menuDesktop {
+  .active {
+    color:#03A9F4 ;
+  }
+  list-style: none;
+  margin: auto;
+  min-height: 60px;
+  li{
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 17px;
+    font-weight: 500;
+    &:hover {
+      border-bottom: 2px solid white;
+    }
+  }
+}

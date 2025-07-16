@@ -1,0 +1,116 @@
+'use client';
+
+import { ReactNode, FC, useEffect, useState } from "react";
+import Menu from "./Menu";
+import MenuDesktop from "./MenuDesktop";
+import Footer from "./Footer";
+import logo from "@/static/img/et-dev-logo.png";
+import SocialLinks from "./SocialLinks";
+import Image from "next/image";
+
+interface HomeLayoutProps {
+  children: ReactNode | ReactNode[]
+}
+
+function clickHandler(this: any, e: { preventDefault: () => void; }) {
+  e.preventDefault();
+
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+
+  window.scroll({
+    top: offsetTop,
+    behavior: "smooth",
+  });
+}
+
+function scrollEfect(setHFixed: { (value: React.SetStateAction<boolean>): void; (arg0: boolean): void; }) {
+  const header = document.getElementById('intro');
+
+  window.onscroll = function () {
+    const scroll = document.documentElement.scrollTop || document.body.scrollTop;
+    if (scroll > 105 && header && window.screen.width > 799) {
+     header.classList.add('header_fixed');
+     setHFixed(true)
+    } else if (header && header.classList.contains('header_fixed')) {
+      header.classList.remove('header_fixed');
+      setHFixed(false);
+    }
+  }
+}
+
+function smothScroll() {
+  const links = document.querySelectorAll("#menuDesktop li a");
+  const linksM = document.querySelectorAll("#menu li a"); 
+  for (const link of links) {
+    link.addEventListener("click", clickHandler);
+  }
+  for (const linkM of linksM) {
+    linkM.addEventListener("click", clickHandler);
+  }
+}
+
+const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
+
+  const [, setHFixed] = useState(false);
+
+  useEffect(() => {
+    scrollEfect(setHFixed);
+    smothScroll();
+  }, []);
+
+
+  return (
+    <>
+      <div id="hero" className="hero--diagonal">
+        <div id="capa">
+          <div className="d-md-none">
+            <Menu />
+          </div>
+          <header id="intro" className="header pl-xl-5">
+            <div className="clearfix mt-xl-0">
+              <Image
+                className="logo float-left mb-5 mt-5 pt-5 pt-md-1 mt-md-0 mr-md-3"
+                src={logo}
+                alt="logo"
+                width={135}
+                height={52.18}
+                style={{ height: 'auto' }}
+              />
+             
+            </div>
+            <div className="d-none d-md-block">
+              <MenuDesktop />
+            </div>
+          </header>
+
+          <section
+            id="welcome"
+            className="animate__animated animate__fadeIn container"
+            style={{ width: '100%' }}
+          >
+            <div className="container">
+              <div className="row justify-content-center align-items center">
+                <div className="col-12 col-md-10">
+                  <div className="text-center">
+                    <h2 className="mt-4 pt-5 pt-md-0 welcome__name text-white bold">Edgar Eduardo Talavera</h2>
+                    <div id="text-welcome" className="mt-5 3"></div>
+                    <div className="mt-3">
+                      <SocialLinks mini />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div>{children}</div>
+     <div className="wabe_footer">
+      <Footer />
+     </div>
+    </>
+  );
+};
+
+export default HomeLayout;

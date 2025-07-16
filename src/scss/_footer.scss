@@ -1,0 +1,38 @@
+
+
+footer {
+  padding: 0 50px;
+  padding-bottom: 70px;
+  position: relative;
+  h3 {
+    color: #eaecee;
+  }
+  hr{
+    background: #4e54c8;
+    height: 3px;
+  }
+  p {
+    color: #eaecee;
+    font-size: 16px;
+  }
+}
+
+.wabe_footer {
+  &::before {
+    mask: url('../static/img/wave-head.svg');
+    mask-repeat: no-repeat;
+    height: 300px;
+    margin-top: -300px;
+    content: "";
+    display: block;
+    position: relative;
+    left: 0px;
+    right: 0px;
+    background-color: $primary;
+    background-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+    -webkit-mask-position-y: bottom;
+  }
+}
+
