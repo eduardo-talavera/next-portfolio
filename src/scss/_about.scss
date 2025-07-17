@@ -1,10 +1,11 @@
-#about{
+#about {
 
   padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
+  position: relative;
 
   background: $background;
   width: 100%;
@@ -55,9 +56,18 @@
      .box{
        width: 250px;
        height: 250px;
-     }
+      }
+    }
    }
-   }
+
+  .text-about {
+    font-size: 19px;
+    color: #a5a8ad;
+  }
+
+ .saturate {
+  filter: saturate(0.5);
+ }
    
    
    @media (max-width: 320px) {
@@ -71,9 +81,7 @@
         height: 200px;
       }
     }
-    }
-
-
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -82,33 +90,35 @@
  }
 }
 
-.text-about {
-  font-size: 19px;
-  color: #a5a8ad;
-}
+/*WAVE INICIO*/
 
-.saturate {
-  filter: saturate(0.5);
-}
-
-.wabe_head {
-  &::before {
-    mask: url('../static/img/wave-head.svg');
-    mask-repeat: no-repeat;
+.wave-about{
+    width: 100vw;
     height: 300px;
-    margin-top: -300px;
-    content: "";
-    display: block;
-    position: relative;
-    left: 0px;
-    right: 0px;
+    position: absolute;
+    top: -299px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    mask: url(../static/img/wave-hero-sm.svg);
     background-color: $background;
-    background-size: 100%;
-    mask-size: 100%;
-    -webkit-mask-size: 100%;
-    -webkit-mask-position-y: bottom;
-  }
+    mask-repeat: no-repeat;
+    mask-position: bottom;
+
+    @media only screen and (width >= 1350px) {
+      mask: url(../static/img/wave-hero-md.svg);
+      height: 335px;
+      top: -334px;
+      mask-size: cover;
+    }
 }
+
+  /*WAVE FINAL*/
+
+/* Add this class to the container element */
+
+
+
 
 
 

@@ -1,9 +1,15 @@
 // Love dynamically typed text? You're gonna love this
 // Edit these strings to see them typed on the screen:
 $strings: (
-	"Web Developer"
-	"FrontEnd Developer"
-	"BackEnd Developer"
+	"Frontend Developement"
+	"Responsive Design"
+	"Technical SEO"
+	"Clean Architecture"
+	"Atomic Design"
+	"Scalable Apps"
+	"Testing Automation"
+	"Continuous Delivery"
+	"Continuous Deployment"
 );
 
 // now for some timing (in seconds)
@@ -71,29 +77,20 @@ $currentPercentage: 0;
 @keyframes beam-blink {
 	75% { border-color: transparent; }
 }
-// * { backface-visibility: hidden; }
-// html, body { height: 100%; }
-#text-welcome {
 
-	color: #3f3; // hacker green
+	#text-welcome {
 	color: #03A9F4;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	&::after {
 		content: "​"; // zero-width space to retain element height
 		position: relative;
-		top: -13px;
 		@media (max-width: 575px) { top: -33px; }
     display: inline-block;
     font-size: 25px;
-    padding-right: 3px;
-		margin-left: 20px;
-		margin-right: 20px;
 		padding-right: calc(3px + 0.1vw);
-		border-right: 10px solid rgba(#3f3, 0.75);
 		border-right: 7px solid rgba( #03A9F4, 0.75);
-		// border-right: calc(1.1vw + 4px) solid rgba(#3f3, 0.75);
-		text-shadow: 0 0 5px rgba(51, 255, 51, 0.75);
+		
 		text-shadow: 0 0 5px  #25b7fa;
 		white-space: wrap;
 		animation: typed #{$durTotal + "s"} linear 1s infinite, beam-blink 1s infinite;
@@ -108,5 +105,6 @@ $currentPercentage: 0;
 		}
 	}
 }
+
 
 

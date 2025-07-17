@@ -12,6 +12,7 @@ interface HomeLayoutProps {
   children: ReactNode | ReactNode[]
 }
 
+
 function clickHandler(this: any, e: { preventDefault: () => void; }) {
   e.preventDefault();
 
@@ -87,14 +88,13 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
           <section
             id="welcome"
             className="animate__animated animate__fadeIn container"
-            style={{ width: '100%' }}
           >
             <div className="container">
               <div className="row justify-content-center align-items center">
                 <div className="col-12 col-md-10">
                   <div className="text-center">
                     <h2 className="mt-4 pt-5 pt-md-0 welcome__name text-white bold">Edgar Eduardo Talavera</h2>
-                    <div id="text-welcome" className="mt-5 3"></div>
+                    <div id="text-welcome" className="mt-3"></div>
                     <div className="mt-3">
                       <SocialLinks mini />
                     </div>
@@ -106,7 +106,8 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
         </div>
       </div>
       <div>{children}</div>
-     <div className="wabe_footer">
+     <div style={{ position: 'relative' }}>
+      <div className="wave-footer"></div>
       <Footer />
      </div>
     </>

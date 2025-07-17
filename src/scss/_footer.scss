@@ -17,22 +17,47 @@ footer {
   }
 }
 
-.wabe_footer {
-  &::before {
-    mask: url('../static/img/wave-head.svg');
-    mask-repeat: no-repeat;
+.wave-footer{
+    width: 100vw;
     height: 300px;
-    margin-top: -300px;
-    content: "";
-    display: block;
-    position: relative;
-    left: 0px;
-    right: 0px;
+    position: absolute;
+    top: -299px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    mask: url(../static/img/wave-hero-sm.svg);
     background-color: $primary;
-    background-size: 100%;
-    mask-size: 100%;
-    -webkit-mask-size: 100%;
-    -webkit-mask-position-y: bottom;
-  }
+    mask-repeat: no-repeat;
+    mask-position: bottom;
+
+    @media only screen and (width >= 1350px) {
+      mask: url(../static/img/wave-hero-md.svg);
+      height: 335px;
+      top: -333px;
+      mask-size: cover;
+    }
 }
+
+  /*WAVE FINAL*/
+
+// .wabe_footer {
+//   &::before {
+//     mask: url('../static/img/wave-hero-sm.svg');
+//     mask-repeat: no-repeat;
+//     height: 300px;
+//     margin-top: -300px;
+//     content: "";
+//     display: block;
+//     position: relative;
+//     left: 0px;
+//     right: 0px;
+//     background-color: $primary;
+//     background-size: 100%;
+//     mask-size: 100%;
+//     -webkit-mask-size: 100%;
+//     -webkit-mask-position-y: bottom;
+//   }
+// }
+
+
 
