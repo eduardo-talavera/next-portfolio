@@ -1,9 +1,13 @@
 'use client';
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import profile from "@/static/img/profile-hacker-alpha.png";
 import Image from "next/image";
+import { Terminal } from "../shared/Terminal";
+import { TechStack } from "./TechStack";
+import { runActionByScroll } from "@/utils/helpers";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function AboutMe() {
   const fade_animation = useSpring({
@@ -11,12 +15,23 @@ export default function AboutMe() {
     from: { opacity: 0 },
   });
 
+  const profileImgref = useRef<HTMLDivElement | null>(null);
+  const textAboutRef = useRef<HTMLDivElement | null>(null);
+  
+  useEffect(() => {
+    runActionByScroll(100, () => {
+      profileImgref.current?.classList.add('animate__fadeInLeft');
+      textAboutRef.current?.classList.add('animate__fadeInUp');
+    })
+  }, [])
+
   return (
     <animated.div id="about" style={fade_animation}>
-      <div className="container-sm">
+      <div className="container">
         <div className="row justify-content-around mt-5 mt-lg-0 pt-5 pt-md-2">
+
           <div className="col-10 col-lg-4">
-            <div className="avatar-efect">
+            <div className="avatar-efect animate__animated" ref={profileImgref}>
                <Image
                   className="about-img shadow"
                   src={profile}
@@ -28,53 +43,68 @@ export default function AboutMe() {
               <div className="box"></div>
             </div>
           </div>
-          <div className="col-11 col-lg-6">
+
+          <div className="col-11 col-lg-6 animate__animated" ref={textAboutRef}>
             <div className="mt-5 pt-5 pt-lg-0 mt-lg-0"></div>
-            <h2 className="text-white mt-2 mt-md-0 text-center text-md-left">
-              Soy un Frontend Developer
+            <h2 className="text-white mt-5 mt-md-0 text-center text-md-left">
+              Sobre mi
             </h2>
            <div className="text-center text-md-left mb-5 mb-md-0">
-              <p className="mt-5">
-                Hola que tal, soy <strong>Eduardo Talavera</strong> un <strong>Frontend Developer</strong> al que
-                le apasiona transformar el código en soluciones creativas. 
-              </p>
-              <p>
-                Entusiasta de aprender
-                nuevas tecnologías y aplicar mis conocimientos en proyectos
-                desafiantes.
+              <p className="mt-3">
+                Soy un <strong>desarrollador frontend</strong> con más de 4 años de experiencia creando soluciones escalables y modernas con
+                React, Next.js, Vue, TypeScript y Node.js. Me especializo en diseño de sistemas reutilizables,
+                automatización con CI/CD, y despliegues en la nube (AWS). Enfocado en eficiencia, calidad de código y
+                liderazgo técnico.
               </p>
            </div>
 
-            <div className="py-2"></div> 
-
-            <div id="terminal" className="mt-5 d-none d-sm-block">
-              <div id="header">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div id="body">
-                <div className="body__item">
-                  <span className="body__item_title">$ contact --email</span>
-                  <span className="body__item_info_box">talaverae4@gmail.com</span>
-                </div>
-
-                <div className="body__item">
-                  <span className="body__item_title">$ cat resume.pdf</span>
-                  <button className="body__item_info_box">Download Resume</button>
-                </div>
-
-                 <div className="body__item">
-                  <span className="body__item_title">$ ls ./social-links</span> <br />
-                  
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+
+        <div className="py-5"></div>
+
+        <div className="row justify-content-center mt-5">
+          <div className="col-10 col-md-8 mt-5">
+            <h2>Pila Tecnológica</h2>
+            <TechStack className="py-5" />
+          </div>
+        </div>
+      
+        <Terminal className="mt-3">
+          <div className="body__item">
+            <span className="body__item_title">$ contact --email</span>
+            <div className="d-flex align-items-center justify-content-between">
+              <span className="body__item_info_box">talaverae4@gmail.com</span>
+              <span className="body__item_time">99ms</span>
+            </div>
+          </div>
+
+          <div className="body__item">
+            <span className="body__item_title">$ download resume.pdf</span>
+            <div className="d-flex align-items-center justify-content-between">
+              <button className="body__item_info_box">Descargar CV</button>
+              <span className="body__item_time">185ms</span>
+            </div>
+          </div>
+
+          <div className="body__item">
+              <span className="body__item_title">$ location --current</span>
+              <div className="d-flex align-items-center justify-content-between">
+                <div className="d-flex align-items-center">
+                  <FaMapMarkerAlt color="white" />
+                  <span className="body__item_location">Michoacán México</span>
+                </div>
+                <span className="body__item_time">79ms</span>
+              </div>
+          </div>  
+
+          <div className="body__item">
+            <div className="d-flex align-items-center justify-content-between">
+              <span className="body__item_title">$ cd ./portfolio</span>
+              <span className="body__item_time">75ms</span>
+            </div>
+          </div>
+        </Terminal>
       </div>
     </animated.div>
   );

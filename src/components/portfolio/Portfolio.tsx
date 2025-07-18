@@ -2,9 +2,7 @@
 
 import React from "react";
 import { useSpring, animated } from '@react-spring/web';
-
-
-import projects from "@/utils/constants";
+import { projects } from "@/utils/constants";
 import CardProject from "./CardProject";
 
 
@@ -23,7 +21,7 @@ export default function Portfolio() {
                 <div>
                  <div className="container-sm">
                   <h2 className="text-white mb-5">
-                    Mi Portafolio
+                    Portafolio
                   </h2>
                   <div className="row row-projects justify-content-center">
                       {projects.map((project, i) => (

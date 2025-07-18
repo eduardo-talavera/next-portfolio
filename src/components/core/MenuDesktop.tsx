@@ -6,7 +6,7 @@ function MenuDesktop() {
       <ul id="menuDesktop">
         <li>
           <a className="link-menu"
-            href="#intro"
+            href="#capa"
           >
             Inicio
           </a>
@@ -25,16 +25,6 @@ function MenuDesktop() {
            Portafolio
           </a>
         </li>
-        {/* <li>
-          <a className="link-menu"
-            style={isActive(history, "/cv-eduardo-talavera.pdf")}
-            href="/cv-eduardo-talavera.pdf"
-            rel="noreferrer"
-            target="_blank"
-            >
-           📋{" "} Hoja de vida
-          </a>
-        </li> */}
       </ul>
     </div>
   )

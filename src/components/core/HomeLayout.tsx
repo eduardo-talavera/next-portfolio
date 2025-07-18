@@ -5,31 +5,34 @@ import Menu from "./Menu";
 import MenuDesktop from "./MenuDesktop";
 import Footer from "./Footer";
 import logo from "@/static/img/et-dev-logo.png";
-import SocialLinks from "./SocialLinks";
+import SocialLinks from "../shared/SocialLinks";
 import Image from "next/image";
 
 interface HomeLayoutProps {
   children: ReactNode | ReactNode[]
 }
 
-
-function clickHandler(this: any, e: { preventDefault: () => void; }) {
+function clickHandler(e: Event) {
   e.preventDefault();
 
-  const href = this.getAttribute("href");
-  const offsetTop = document.querySelector(href).offsetTop;
+  const target = e.currentTarget as HTMLAnchorElement;
+  const href = target.getAttribute("href");
 
-  window.scroll({
-    top: offsetTop,
-    behavior: "smooth",
-  });
+  if (!href || !href.startsWith("#")) return;
+
+  const section = document.querySelector(href) as HTMLElement | null;
+
+  if (!section) return;
+
+  section.scrollIntoView({ behavior: "smooth" });
 }
 
-function scrollEfect(setHFixed: { (value: React.SetStateAction<boolean>): void; (arg0: boolean): void; }) {
+function scrollEfect(setHFixed: (value: boolean) => void) {
   const header = document.getElementById('intro');
 
-  window.onscroll = function () {
+  window.onscroll = function() {
     const scroll = document.documentElement.scrollTop || document.body.scrollTop;
+
     if (scroll > 105 && header && window.screen.width > 799) {
      header.classList.add('header_fixed');
      setHFixed(true)
@@ -63,7 +66,7 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
 
   return (
     <>
-      <div id="hero" className="hero--diagonal">
+      <div id="hero">
         <div id="capa">
           <div className="d-md-none">
             <Menu />
@@ -93,7 +96,7 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
               <div className="row justify-content-center align-items center">
                 <div className="col-12 col-md-10">
                   <div className="text-center">
-                    <h2 className="mt-4 pt-5 pt-md-0 welcome__name text-white bold">Edgar Eduardo Talavera</h2>
+                    <h1 className="mt-4 pt-5 pt-md-0 welcome__name text-white bold">Edgar Eduardo Talavera</h1>
                     <div id="text-welcome" className="mt-3"></div>
                     <div className="mt-3">
                       <SocialLinks mini />

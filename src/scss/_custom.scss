@@ -4,11 +4,4 @@ $background:  #1f2222;
 $white80: #ffffffcc;
 $info: #0a94d4;
 
-$theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "info": $info
-);
-
-
 @import "~bootstrap/scss/bootstrap";

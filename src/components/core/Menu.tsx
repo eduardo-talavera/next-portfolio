@@ -12,7 +12,7 @@ const Menu = () => (
     <ul id="menu">
       <li>
         <a className="link-menu" 
-         href="#intro">
+         href="#capa">
           Inicio
         </a>
       </li>

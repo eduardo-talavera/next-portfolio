@@ -13,7 +13,36 @@ export type Project = {
   title: string
 }
 
-const projects: Project[] = [
+ export const skills: string[] = [
+    'javascript',
+    'typescript',
+    'react',
+    'vue',
+    'vite',
+    'vitest',
+    'tailwind',
+    'css',
+    'sass',
+    'bootstrap',
+    'next',
+    'aws',
+    'prisma',
+    'nodejs',
+    'express',
+    'jest',
+    'docker',
+    'graphql',
+    'html',
+    'vscode',
+    'webpack',
+    'postgresql',
+    'mongodb',
+    'bun',
+    'yarn',
+    'npm'
+  ]
+
+export const projects: Project[] = [
   {
     imageSrc: twitterClone,
     sourceCodeSrc: 'https://github.com/eduardo-talavera',
@@ -51,5 +80,4 @@ const projects: Project[] = [
   }
 ];
 
-export default projects;
 

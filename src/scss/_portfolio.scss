@@ -17,10 +17,12 @@
     .wrapper {
       margin: auto;
       
-      .box{
+      .box {
         cursor: crosshair;
         margin: auto;
         text-align: center;
+        position: relative;
+        overflow: hidden;
 
         width: 100%;
         height: 200px;
@@ -29,68 +31,91 @@
         -webkit-box-shadow: -4px 5px 25px 9px rgba(50,211,224,0.39);
         -moz-box-shadow: -4px 5px 25px 9px rgba(50,211,224,0.39);
         border-radius: 8px;
-      
-  
-        .img-area {
-          border-radius: 8px;
-          position: relative;
-          width: 100%;
-          height: 200px;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center center;
-          transition: all .25s ease-in-out;
-    
-          @media (max-width: 500px) {
-              height: 160px;
+
+         .overlay {
+            position: absolute;
+            //top: 0;
+            //left: 0;
+            bottom: -50px;
+            right: -50px;
+            z-index: 1;
+            background: rgba(0,0,0,0.8);
+            //transform: scaleX(0);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            transform: scale(0);
+
+            transition: all .5s ease-in-out;
           }
 
-          @media (max-width: 400px) {
-            height: 150px;
-          }
-    
-          @media (max-width: 340px) {
-            height: 120px;
-          }
-    
-          .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: rgba(0,0,0,0.8);
-            transform: scaleX(0);
-            transition: all .25s ease-in-out;
-      
-            .actions {
-              margin-top: 1.2rem;
-              position: relative;
-              top: 50%;
-              transform: translateY(-50%);
-      
-              .item{
-                display: inline-block;
-                cursor: pointer;
-                width: 90px;
-                height: 90px;
-                color: #25b7fa;
-                line-height: 40px;
-                text-align: center;
-                border-radius: 50%;
-                font-size: 17px;
-                font-weight: 600;
-                margin-right: 6px;
-                transform: translateY(40px);
-                visibility: hidden;
-                opacity: 0;
-                transition: all .5s ease-in-out;
+            // Image area start
+            .img-area {
+              border-radius: 8px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              height: 200px;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center center;
+              transition: all .25s ease-in-out;
+        
+              @media (max-width: 500px) {
+                  height: 160px;
+              }
+
+              @media (max-width: 400px) {
+                height: 150px;
+              }
+        
+              @media (max-width: 340px) {
+                height: 120px;
               }
             }
-          }
-      
-          &:hover {
+            // Image area end
 
+               // start actions
+              .actions-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: transparent;
+                z-index: 2;
+
+                .actions {
+                  margin-top: 1.2rem;
+                  position: relative;
+                  top: 50%;
+                  transform: translateY(-50%);
+          
+                  .item{
+                    display: inline-block;
+                    cursor: pointer;
+                    width: 90px;
+                    height: 90px;
+                    color: #25b7fa;
+                    line-height: 40px;
+                    text-align: center;
+                    border-radius: 50%;
+                    font-size: 17px;
+                    font-weight: 600;
+                    margin-right: 6px;
+                    transform: translateY(40px);
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all .5s ease-in-out;
+                  }
+                }
+              }
+              // end actions 
+
+          &:hover {
             .actions .item {
               transform: translateY(0);
               visibility: visible;
@@ -98,28 +123,27 @@
             }
     
             .actions .item:nth-child(1) {
-              transition-delay: .0s;
+              transition-delay: .20s;
             }
     
             .actions .item:nth-child(2) {
-              transition-delay: .15s;
+              transition-delay: .25s;
             }
     
             .actions .item:nth-child(3) {
               transition-delay: .30s;
             }
     
-            .actions .item:nth-child(4) {
-              transition-delay: .45s;
-            }
-              
             .overlay{
-              transform: scaleX(1);
+              //transform: scaleX(1);
+              transform: scale(20);
+            }
+
+            .img-area {
+              transform: rotate(-22.5deg) scale(2);
+              filter: blur(1px);
             }
           }
-
-        //box end
-        }
       }
     }
   }
@@ -156,7 +180,6 @@
   font-size: 50px;
 }
 
-
 .area{
   width: 100%;
   min-height:100vh; 
@@ -180,7 +203,6 @@
   background: #25b7fa;
   animation: animate 25s linear infinite;
   bottom: -150px;
-  
 }
 
 .circles li:nth-child(1){
@@ -190,7 +212,6 @@
   animation-delay: 0s;
 }
 
-
 .circles li:nth-child(2){
   left: 10%;
   width: 20px;
@@ -198,7 +219,6 @@
   animation-delay: 2s;
   animation-duration: 12s;
 }
-
 .circles li:nth-child(3){
   left: 70%;
   width: 20px;
@@ -259,8 +279,6 @@
   animation-duration: 11s;
 }
 
-
-
 @keyframes animate {
 
   0%{
@@ -276,7 +294,6 @@
   }
 
 }
-
 
 @media only screen and (max-width: 600px) {
   .wabe {

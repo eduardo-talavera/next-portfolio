@@ -33,13 +33,11 @@ const CardProject = ({ project }: CardProjectProps) => {
         //   setOpen((o) => !o);
         // }}
       >
-        <div className="content-image-area">
-          <div
-            className="img-area"
-            style={{ backgroundImage: `url(${project.imageSrc.src})` }}
-          >
-            <div className="overlay">
-              <div className="actions text-center">
+        <div  className="overlay">
+        </div>
+
+        <div className="actions-container">
+            <div className="actions text-center">
 
                 {/* <CustomButton /> */}
                 {/* <Modal project={project} open={open} setOpen={setOpen} /> */}
@@ -87,13 +85,20 @@ const CardProject = ({ project }: CardProjectProps) => {
                   </a>
                   </>
                 }
-              </div>
-            </div>
           </div>
         </div>
-        <div>
-          <h5 className="content mt-4 mb-4">{project.title}</h5>
+
+        <div className="content-image-area">
+          <div
+            className="img-area"
+            style={{ backgroundImage: `url(${project.imageSrc.src})` }}
+          >
+          </div>
         </div>
+     </div>
+
+      <div>
+        <h5 className="content mt-4 mb-4 text-center">{project.title}</h5>
       </div>
     </div>
   );
