@@ -98,7 +98,7 @@ const CardProject = ({ project }: CardProjectProps) => {
      </div>
 
       <div>
-        <h5 className="content mt-4 mb-4 text-center">{project.title}</h5>
+        <h5 className="content mt-4 mb-4 text-center theme_text">{project.title}</h5>
       </div>
     </div>
   );

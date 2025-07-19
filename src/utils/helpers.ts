@@ -2,7 +2,5 @@ export  const runActionByScroll =(scrollSizeTrigger: number, callback: (scroll: 
     window.addEventListener('scroll', () => {
       const scroll = document.documentElement.scrollTop || document.body.scrollTop;
       if (scroll > scrollSizeTrigger) callback(scroll);
-
-      console.log(scroll);
     }) 
   }

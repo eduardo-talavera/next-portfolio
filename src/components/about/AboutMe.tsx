@@ -46,11 +46,11 @@ export default function AboutMe() {
 
           <div className="col-11 col-lg-6 animate__animated" ref={textAboutRef}>
             <div className="mt-5 pt-5 pt-lg-0 mt-lg-0"></div>
-            <h2 className="text-white mt-5 mt-md-0 text-center text-md-left">
+            <h2 className="theme_text mt-5 mt-md-0 text-center text-md-left">
               Sobre mi
             </h2>
            <div className="text-center text-md-left mb-5 mb-md-0">
-              <p className="mt-3">
+              <p className="mt-3 theme_text">
                 Soy un <strong>desarrollador frontend</strong> con más de 4 años de experiencia creando soluciones escalables y modernas con
                 React, Next.js, Vue, TypeScript y Node.js. Me especializo en diseño de sistemas reutilizables,
                 automatización con CI/CD, y despliegues en la nube (AWS). Enfocado en eficiencia, calidad de código y
@@ -65,7 +65,7 @@ export default function AboutMe() {
 
         <div className="row justify-content-center mt-5">
           <div className="col-10 col-md-8 mt-5">
-            <h2>Pila Tecnológica</h2>
+            <h2 className="theme_text">Pila Tecnológica</h2>
             <TechStack className="py-5" />
           </div>
         </div>

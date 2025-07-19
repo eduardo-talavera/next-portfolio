@@ -26,7 +26,7 @@ footer {
     right: 0;
     z-index: 1;
     mask: url(../static/img/wave-hero-sm.svg);
-    background-color: $primary;
+    background-color: var(--primaryTheme);
     mask-repeat: no-repeat;
     mask-position: bottom;
 
@@ -39,25 +39,5 @@ footer {
 }
 
   /*WAVE FINAL*/
-
-// .wabe_footer {
-//   &::before {
-//     mask: url('../static/img/wave-hero-sm.svg');
-//     mask-repeat: no-repeat;
-//     height: 300px;
-//     margin-top: -300px;
-//     content: "";
-//     display: block;
-//     position: relative;
-//     left: 0px;
-//     right: 0px;
-//     background-color: $primary;
-//     background-size: 100%;
-//     mask-size: 100%;
-//     -webkit-mask-size: 100%;
-//     -webkit-mask-position-y: bottom;
-//   }
-// }
-
 
 

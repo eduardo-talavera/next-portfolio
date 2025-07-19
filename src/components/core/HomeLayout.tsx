@@ -5,8 +5,11 @@ import Menu from "./Menu";
 import MenuDesktop from "./MenuDesktop";
 import Footer from "./Footer";
 import logo from "@/static/img/et-dev-logo.png";
+import logoLightTheme from '@/static/img/logo-dev-2-removebg.png'
 import SocialLinks from "../shared/SocialLinks";
 import Image from "next/image";
+import { ThemeToggle } from "../shared/ThemeToggle";
+import { useTheme } from "@/context/ThemeContext";
 
 interface HomeLayoutProps {
   children: ReactNode | ReactNode[]
@@ -58,6 +61,8 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
 
   const [, setHFixed] = useState(false);
 
+  const { theme } = useTheme();
+
   useEffect(() => {
     scrollEfect(setHFixed);
     smothScroll();
@@ -75,7 +80,7 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
             <div className="clearfix mt-xl-0">
               <Image
                 className="logo float-left mb-5 mt-5 pt-5 pt-md-1 mt-md-0 mr-md-3"
-                src={logo}
+                src={theme === 'light' ? logoLightTheme : logo}
                 alt="logo"
                 width={135}
                 height={52.18}
@@ -84,7 +89,10 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
              
             </div>
             <div className="d-none d-md-block">
-              <MenuDesktop />
+              <div className="d-flex">
+                <MenuDesktop />
+                <ThemeToggle className='ml-5' />
+              </div>
             </div>
           </header>
 

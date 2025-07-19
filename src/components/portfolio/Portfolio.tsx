@@ -20,7 +20,7 @@ export default function Portfolio() {
               <div className="wrapper container">
                 <div>
                  <div className="container-sm">
-                  <h2 className="text-white mb-5">
+                  <h2 className="theme_text mb-5">
                     Portafolio
                   </h2>
                   <div className="row row-projects justify-content-center">

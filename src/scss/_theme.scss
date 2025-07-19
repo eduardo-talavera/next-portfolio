@@ -4,7 +4,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: $background;
+  background: var(--background);
   font-family: 'Lato', arial, sans-serif;
   // font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -72,10 +72,11 @@ body {
 }
 
 #hero {
-  background-image: url('../static/img/codigo.jpg');
+  background-image: var(--heroBg);
   background-size: cover;
   min-height: 100vh;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 #capa{
@@ -85,7 +86,7 @@ body {
 	left: 0;
 	right: 0;
   min-height: 100vh;
-	background-color: rgba(0,0,0,0.8);
+	background-color: var(--capaOverlayBg);
 }
 
 // Ipad pro
@@ -124,7 +125,7 @@ h2 {
 }
 
 .social a {
-  background: #e4e6e7;
+  background: var(--socialFooterBg);
   // background: rgb(100, 80, 100);
   width: 40px;
   height: 40px;
@@ -137,7 +138,7 @@ h2 {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  color: black;
+  color: var(--socialFooterColor);
   // color: white;
   text-align: center;
   margin: 3px;
@@ -197,7 +198,7 @@ a {
   border: 1px solid;
  
   &:hover {
-    background-color: $info;
+    background-color: #25b7fa;
     transition: .25s ease-in-out;
   }
 
@@ -334,9 +335,13 @@ a {
 
 .header_fixed {
   padding: 5px 100px 3px 100px;
-  background: $secondary;
+  background: var(--headerBg);
   box-shadow: 0 5px 9px -8px rgb(22, 22, 22);
   transition: all .5s ease-in-out;
+
+  a {
+    color: var(--text);
+  }
 }
 
 /* ======= Sections======= */
@@ -601,7 +606,7 @@ a {
 
 
 .footer {
-  background:$primary;
+  background: var(--primaryTheme);
 }
 
 

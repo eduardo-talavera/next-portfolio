@@ -3,7 +3,7 @@
   min-height: 100vh;
   padding-top: 50px;
   padding-bottom: 500px;
-  background: $secondary;
+  background: var(--secondaryTheme);
   width: 100%;
   position: relative;
  
@@ -27,9 +27,9 @@
         width: 100%;
         height: 200px;
 
-        box-shadow: -4px 5px 25px 9px rgba(50,211,224,0.39);
-        -webkit-box-shadow: -4px 5px 25px 9px rgba(50,211,224,0.39);
-        -moz-box-shadow: -4px 5px 25px 9px rgba(50,211,224,0.39);
+        box-shadow: var(--projectCardBoxShadow);
+        -webkit-box-shadow: var(--projectCardBoxShadow);
+        -moz-box-shadow: var(--projectCardBoxShadow);
         border-radius: 8px;
 
          .overlay {
@@ -39,7 +39,7 @@
             bottom: -50px;
             right: -50px;
             z-index: 1;
-            background: rgba(0,0,0,0.8);
+            background: var(--overlayProject);
             //transform: scaleX(0);
             border-radius: 50%;
             width: 100px;
@@ -99,7 +99,7 @@
                     cursor: pointer;
                     width: 90px;
                     height: 90px;
-                    color: #25b7fa;
+                    color: var(--actionIconColor);
                     line-height: 40px;
                     text-align: center;
                     border-radius: 50%;
@@ -158,7 +158,7 @@
     right: 0;
     z-index: 1;
     mask: url(../static/img/wave-hero-sm.svg);
-    background-color: $secondary;
+    background-color: var(--secondaryTheme);
     mask-repeat: no-repeat;
     mask-position: bottom;
 
@@ -200,7 +200,7 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: #25b7fa;
+  background: var(--animatedCircleBg);
   animation: animate 25s linear infinite;
   bottom: -150px;
 }
