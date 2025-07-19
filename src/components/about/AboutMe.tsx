@@ -2,12 +2,14 @@
 
 import React, { useEffect, useRef } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import profile from "@/static/img/profile-hacker-alpha.png";
+import profile from "@/static/img/logo-avatar-5.png";
+import profileDark from "@/static/img/avatar-logo-2.png"
 import Image from "next/image";
 import { Terminal } from "../shared/Terminal";
 import { TechStack } from "./TechStack";
 import { runActionByScroll } from "@/utils/helpers";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function AboutMe() {
   const fade_animation = useSpring({
@@ -17,6 +19,8 @@ export default function AboutMe() {
 
   const profileImgref = useRef<HTMLDivElement | null>(null);
   const textAboutRef = useRef<HTMLDivElement | null>(null);
+
+  const { theme } = useTheme();
   
   useEffect(() => {
     runActionByScroll(100, () => {
@@ -34,10 +38,10 @@ export default function AboutMe() {
             <div className="avatar-efect animate__animated" ref={profileImgref}>
                <Image
                   className="about-img shadow"
-                  src={profile}
+                  src={theme === 'light' ? profile : profileDark}
                   alt="profile img"
-                  width={300}
-                  height={300}
+                  width={400}
+                  height={400}
                   style={{ height: 'auto' }}
               />
               <div className="box"></div>
