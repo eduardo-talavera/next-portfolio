@@ -1,106 +1,86 @@
 'use client';
 
-import { FaCode, FaEye, FaSearchPlus} from "react-icons/fa";
-
 import React from "react";
-// import Modal from "./Modal";
+import { FaGithub, FaGlobe, FaExpand } from "react-icons/fa";
 import { Project } from "@/utils/constants";
-
+import { useGlobalState } from "@/context/GlobalStateContext";
 export interface CardProjectProps {
   project: Project;
 }
 
 const CardProject = ({ project }: CardProjectProps) => {
-  // const [open, setOpen] = useState(false);
-
-  // const CustomButton = () => (
-  //   <a
-  //     onClick={(e) => {
-  //       e.preventDefault();
-  //       setOpen((o) => !o);
-  //     }}
-  //     className="button item"
-  //   >
-  //     <i className="fas fa-plus"></i>
-  //   </a>
-  // );
+  const { openProject } = useGlobalState();
 
   return (
-    <div className="col-10 col-sm-8 col-md-6 col-xl-4 item_project">
-      <div 
-        className="box mt-5"
-        // onClick={() => {
-        //   setOpen((o) => !o);
-        // }}
-      >
-        <div  className="overlay">
-        </div>
+    <>
+      <div className="col-10 col-sm-8 col-md-6 col-xl-4 item_project">
+        <div 
+          className="box mt-5"
+          onClick={() => openProject(project)}
+        >
+          <div  className="overlay">
+          </div>
 
-        <div className="actions-container">
-            <div className="actions text-center">
+          <div className="actions-container">
+              <div className="actions text-center">
+                  {project.liveDemoSrc && (
+                    <a
+                      href={project.liveDemoSrc}
+                      rel="noreferrer"
+                      target="_blank"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Ver Proyecto"
+                      className="item"
+                    >
+                    <FaGlobe size={50}/>
+                    </a>
+                  )}
 
-                {/* <CustomButton /> */}
-                {/* <Modal project={project} open={open} setOpen={setOpen} /> */}
-                {/* <i className="fas fa-plus item" style={{fontSize: '100px'}}></i> */}
-                {project.liveDemoSrc && (
-                  <a
-                    href={project.liveDemoSrc}
-                    rel="noreferrer"
-                    target="_blank"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Ver Proyecto"
-                    className="item"
-                  >
-                  <FaEye size={50}/>
-                  </a>
-                )}
+                  {project.sourceCodeSrc && (
+                    <a
+                      href={project.sourceCodeSrc}
+                      rel="noreferrer"
+                      target="_blank"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Ir al codigo"
+                      className="item"
+                    >
+                      <FaGithub size={50} />
+                    </a>
+                  )}   
 
-                {project.sourceCodeSrc && (
-                  <a
-                    href={project.sourceCodeSrc}
-                    rel="noreferrer"
-                    target="_blank"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Ir al codigo"
-                    className="item"
-                  >
-                    <FaCode size={50} />
-                  </a>
-                )}   
+                  {
+                    project.info && <>
+                    <button
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Info"
+                      className="item"
+                      onClick={() => openProject(project)}
+                    >
+                      <FaExpand  size={50} />
+                    </button>
+                    </>
+                  }
+            </div>
+          </div>
 
-                {
-                  project.info && <>
-                     <a
-                    href={project.sourceCodeSrc}
-                    rel="noreferrer"
-                    target="_blank"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Info"
-                    className="item"
-                  >
-                    <FaSearchPlus size={50} />
-                  </a>
-                  </>
-                }
+          <div className="content-image-area">
+            <div
+              className="img-area"
+              style={{ backgroundImage: `url(${project.imageSrc.src})` }}
+            >
+            </div>
           </div>
         </div>
-
-        <div className="content-image-area">
-          <div
-            className="img-area"
-            style={{ backgroundImage: `url(${project.imageSrc.src})` }}
-          >
-          </div>
-        </div>
-     </div>
 
       <div>
         <h5 className="content mt-4 mb-4 text-center theme_text">{project.title}</h5>
       </div>
     </div>
+    </>
   );
 };
 

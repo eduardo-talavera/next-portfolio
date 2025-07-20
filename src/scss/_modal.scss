@@ -1,0 +1,48 @@
+#theme_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+
+  .modal_overlay {
+    background-color: var(--modalOverlay);
+    backdrop-filter: blur(5px);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal_content {
+      background-color: var(--headerBg);
+      width: 50vw;
+      height: 500px;
+      padding: 2rem;
+      border-radius: 1rem;
+      position: relative;
+
+      .modal_close_icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+      }
+
+      .modal_image {
+        background-size: cover;
+        background-position: center center;
+        width: 350px;
+        height: 200px;
+        border-radius: 1rem;
+      }
+    }
+  }
+}

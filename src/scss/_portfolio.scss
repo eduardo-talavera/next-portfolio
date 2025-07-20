@@ -111,6 +111,12 @@
                     opacity: 0;
                     transition: all .5s ease-in-out;
                   }
+
+                  button.item {
+                    border: none;
+                    background: none;
+                    outline: none !important;
+                  }
                 }
               }
               // end actions 

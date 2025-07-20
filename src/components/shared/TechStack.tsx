@@ -1,14 +1,15 @@
 'use client';
 
-import { skills } from '@/utils/constants';
 import { runActionByScroll } from '@/utils/helpers';
 import React, { useEffect, useRef } from 'react'
 
 interface TechStackProps {
   className?: string
+  skills: string[]
+  imgSize?: number
 }
 
-export const TechStack = ({ className, ...props }: TechStackProps) => {
+export const TechStack = ({ className, skills, imgSize = 50,  ...props }: TechStackProps) => {
 
   const ref = useRef<HTMLDivElement | null>(null)
 
@@ -19,16 +20,19 @@ export const TechStack = ({ className, ...props }: TechStackProps) => {
   }, [])
 
   return (
-    <div {...props} className={`animate__animated ${className}`} ref={ref}>
+    <div {...props} className={`${className}`} ref={ref}>
       {
         skills.map(skill => (
           <img
             key={skill}
             className='m-2'
             src={`https://skillicons.dev/icons?i=${skill}`} 
-            width={50}
-            height={50} 
+            width={imgSize}
+            height={imgSize} 
             alt={`${skill} icon`}  
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title={skill}
           />
         ))
       }

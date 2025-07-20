@@ -5,7 +5,6 @@ import { useSpring, animated } from '@react-spring/web';
 import { projects } from "@/utils/constants";
 import CardProject from "./CardProject";
 
-
 export default function Portfolio() {
 
   const fade_animation = useSpring({

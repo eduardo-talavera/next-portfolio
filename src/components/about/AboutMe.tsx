@@ -3,13 +3,15 @@
 import React, { useEffect, useRef } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import profile from "@/static/img/logo-avatar-5.png";
-import profileDark from "@/static/img/avatar-logo-2.png"
+import profileDark from "@/static/img/logo-avatar-6.png"
 import Image from "next/image";
 import { Terminal } from "../shared/Terminal";
-import { TechStack } from "./TechStack";
-import { runActionByScroll } from "@/utils/helpers";
+import { TechStack } from "../shared/TechStack";
+import { downloadFromUrl, runActionByScroll } from "@/utils/helpers";
+import { skills } from '@/utils/constants';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
+import Link from "next/link";
 
 export default function AboutMe() {
   const fade_animation = useSpring({
@@ -70,7 +72,7 @@ export default function AboutMe() {
         <div className="row justify-content-center mt-5">
           <div className="col-10 col-md-8 mt-5">
             <h2 className="theme_text">Pila Tecnológica</h2>
-            <TechStack className="py-5" />
+            <TechStack skills={skills} imgSize={50} className="py-5 animate__animated" />
           </div>
         </div>
       
@@ -86,7 +88,14 @@ export default function AboutMe() {
           <div className="body__item">
             <span className="body__item_title">$ download resume.pdf</span>
             <div className="d-flex align-items-center justify-content-between">
-              <button className="body__item_info_box">Descargar CV</button>
+              <a 
+                href="/pdf/CV_Edgar_Eduardo_Talavera_Desarrollador_Frontend.pdf" 
+                className="body__item_info_box"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                  Descargar CV
+              </a>
               <span className="body__item_time">185ms</span>
             </div>
           </div>

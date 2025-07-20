@@ -10,6 +10,9 @@ import SocialLinks from "../shared/SocialLinks";
 import Image from "next/image";
 import { ThemeToggle } from "../shared/ThemeToggle";
 import { useTheme } from "@/context/ThemeContext";
+import Modal from "../portfolio/Modal";
+import { GlobalStateProvider, useGlobalState } from "@/context/GlobalStateContext";
+import { Project } from "@/utils/constants";
 
 interface HomeLayoutProps {
   children: ReactNode | ReactNode[]
@@ -62,15 +65,25 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
   const [, setHFixed] = useState(false);
 
   const { theme } = useTheme();
+  const { state, closeProject } = useGlobalState();
+  const { currentProject, showProject } = state;
 
   useEffect(() => {
     scrollEfect(setHFixed);
     smothScroll();
   }, []);
 
-
   return (
     <>
+      {
+        showProject && <>
+          <Modal 
+            project={currentProject as Project} 
+            onClickOutside={closeProject}
+          />
+        </>
+      }
+
       <div id="hero">
         <div id="capa">
           <div className="d-md-none">
@@ -85,6 +98,7 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
                 width={135}
                 height={52.18}
                 style={{ height: 'auto' }}
+                priority
               />
              
             </div>

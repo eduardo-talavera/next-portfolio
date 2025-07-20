@@ -2,94 +2,37 @@
 
 import React, { useEffect, useRef } from "react";
 import { Project } from "@/utils/constants";
-import Image from "next/image";
+import { useOutsideAlerter } from "@/hooks/useOutsideAlerter";
+import { FaRegWindowClose } from "react-icons/fa";
+import { useGlobalState } from "@/context/GlobalStateContext";
+import { TechStack } from "../shared/TechStack";
 
 export interface ModalProps {
   project: Project;
-  open: boolean;
-  setOpen: (value: boolean) => void;
+  onClickOutside: () => void;
 }
 
-function Modal({ project, open, setOpen }: ModalProps) {
+function Modal({ project, onClickOutside }: ModalProps) {
 
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const { closeProject } = useGlobalState()
  
-  function useOutsideAlerter(ref: React.RefObject<HTMLDivElement | null>) {
-      useEffect(() => {
-      
-          function handleClickOutside(event: MouseEvent) {
-              if (ref.current && !ref.current.contains(event.target as Node)) {
-                  setOpen(false);
-              }
-          }
-    
-          // Bind the event listener
-          document.addEventListener("mousedown", handleClickOutside);
-          return () => {
-              // Unbind the event listener on clean up
-              document.removeEventListener("mousedown", handleClickOutside);
-          };
-      }, [ref]);
-    }
-
-  useOutsideAlerter(wrapperRef);
+  useOutsideAlerter(wrapperRef, () => onClickOutside());
 
   return (
-      <div ref={wrapperRef} >
-        <div className="modal-all">
-          <div className="modal-header">
-            <h2> {project.title} </h2>
-            <div onClick={() => setOpen(!open)}>
-              <i
-                className="fas fa-times popup__close"
-              ></i>
-            </div>
-          </div>
-          <div className="modal-content">
-            <div className="row justify-content-center">
-              <div className="col-md-10">
-                 <Image 
-                    src={project.imageSrc}
-                    alt={project.title}
-                    className="img-fluid"
-                  />
-                {/* <img
-                  src={project.imageSrc}
-                  alt={project.title}
-                  className="img-fluid"
-                /> */}
-                <p className="mt-5 text-center">
-                 {project.info}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="modal-actions">
-            <div className="row justify-content-center mt-5">
-              <div className="col-md-10">
-                {project.liveDemoSrc && (
-                  <a
-                    href={project.liveDemoSrc}
-                    className="btn btn-info ml-3 mr-3 mb-3"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Ver proyecto
-                  </a>
-                )}
-
-                {project.sourceCodeSrc && (
-                  <a
-                    href={project.sourceCodeSrc}
-                    className="btn btn-info mb-3"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Ir al codigo
-                  </a>
-                )}
-              </div>
-            </div>
+      <div id="theme_modal">
+        <div className="modal_overlay">
+          <div className="modal_content d-flex flex-column align-items-start justify-content-start" ref={wrapperRef}>
+            <FaRegWindowClose 
+              className="modal_close_icon theme_text" 
+              size={30}
+              onClick={closeProject}
+            />
+            <h3 className="theme_text">{ project.title }</h3>
+            {/* <div className="modal_image" style={{ backgroundImage: `url(${project.imageSrc.src})` }} /> */}
+            <p className="theme_text mt-2">{ project.info }</p>
+            <h5 className="theme_text">Tegnologias usadas:</h5>
+            <TechStack skills={project.stack} imgSize={40} />
           </div>
         </div>
       </div>
