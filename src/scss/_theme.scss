@@ -79,7 +79,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 
-  @media screen and (width >= 600){
+  @media screen and (width >= 600px){
      min-height: 100vh;
   }
 }
@@ -92,7 +92,8 @@ body {
 	right: 0;
   min-height: 90vh;
 	background-color: var(--capaOverlayBg);
-  @media screen and (width >= 600){
+
+  @media screen and (width >= 600px){
      min-height: 100vh;
   }
 }

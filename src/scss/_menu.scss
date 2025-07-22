@@ -45,9 +45,12 @@
     outline: 0;
     display: none;
   }
+
   li {
-    width: 230px;
-    text-indent: 56px;}
+    //width: 230px;
+    text-indent: 100px;
+  }
+  
   a:focus {
     display: block;
     color: #03A9F4;

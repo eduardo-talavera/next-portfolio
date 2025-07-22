@@ -1,6 +1,7 @@
 'use client';
 
 import React from "react";
+import { ThemeToggle } from "../shared/ThemeToggle";
 
 const Menu = () => (
   <div id="menu_h">
@@ -31,6 +32,9 @@ const Menu = () => (
         >
           Portafolio
         </a>
+      </li>
+      <li>
+        <ThemeToggle text />
       </li>
     </ul>
   </div>
