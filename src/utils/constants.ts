@@ -1,6 +1,6 @@
-import tropixUiThumbnail from '../static/img/tropix-ui-thubnail.png'
-import ipTracker from '../static/img/ip-tracker.png';
-import twitterClone from '../static/img/twitter-clone.png';
+import tropixUiThumbnail from '../static/img/tropix-ui-thubnail.webp'
+import ipTracker from '../static/img/ip-tracker.webp';
+import twitterClone from '../static/img/twitter-clone.webp';
 import { StaticImageData } from 'next/image';
 
 export type Project = {

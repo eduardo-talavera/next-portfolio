@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import profile from "@/static/img/logo-avatar-5.png";
-import profileDark from "@/static/img/logo-avatar-6.png"
+import profile from "@/static/img/logo-avatar-5.webp";
+import profileDark from "@/static/img/logo-avatar-6.webp"
 import Image from "next/image";
 import { Terminal } from "../shared/Terminal";
 import TechStack from "../shared/TechStack";
@@ -44,6 +44,7 @@ export default function AboutMe() {
                   alt="profile img"
                   width={400}
                   height={400}
+                  priority
                   style={{ height: 'auto' }}
               />
               <div className="box"></div>

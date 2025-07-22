@@ -4,8 +4,8 @@ import { ReactNode, FC, useEffect, useState } from "react";
 import Menu from "./Menu";
 import MenuDesktop from "./MenuDesktop";
 import Footer from "./Footer";
-import logo from "@/static/img/et-dev-logo.png";
-import logoLightTheme from '@/static/img/logo-dev-2-removebg.png'
+import logo from "@/static/img/et-dev-logo.webp";
+import logoLightTheme from '@/static/img/logo-dev-2-removebg.webp'
 import SocialLinks from "../shared/SocialLinks";
 import Image from "next/image";
 import { ThemeToggle } from "../shared/ThemeToggle";
