@@ -1,12 +1,11 @@
-import { useEffect } from "react";
+import { RefObject, useEffect } from "react";
 
-export const useOutsideAlerter = (ref: React.RefObject<HTMLDivElement | null>, callback: () => void) => {
+export const useOutsideAlerter = (ref: RefObject<HTMLDivElement | null>, callback: () => void) => {
   useEffect(() => {
   
       function handleClickOutside(event: MouseEvent) {
           if (ref.current && !ref.current.contains(event.target as Node)) {
               callback();
-              console.log(':v')
           }
       }
 

@@ -4,7 +4,7 @@
   padding-top: 50px;
   padding-bottom: 500px;
   background: var(--secondaryTheme);
-  width: 100%;
+  width: 100vw;
   position: relative;
  
   .content_area {
@@ -63,18 +63,6 @@
               background-repeat: no-repeat;
               background-position: center center;
               transition: all .25s ease-in-out;
-        
-              @media (max-width: 500px) {
-                  height: 160px;
-              }
-
-              @media (max-width: 400px) {
-                height: 150px;
-              }
-        
-              @media (max-width: 340px) {
-                height: 120px;
-              }
             }
             // Image area end
 
@@ -159,7 +147,7 @@
     width: 100vw;
     height: 300px;
     position: absolute;
-    top: -299px;
+    top: -295px;
     left: 0;
     right: 0;
     z-index: 1;
@@ -171,8 +159,13 @@
     @media only screen and (width >= 1350px) {
       mask: url(../static/img/wave-hero-md.svg);
       height: 335px;
-      top: -333px;
+      top: -330px;
       mask-size: cover;
+    }
+
+    @media only screen and (width >= 2100px) {
+      height: 500px;
+      top: -495px;
     }
 }
 

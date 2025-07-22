@@ -7,13 +7,16 @@
   position: relative;
 
   background: var(--background);
-  width: 100%;
+  width: 100vw;
 
   p {
     color: var(--text);
-    line-height: 1.7;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
+
+    @media screen and (width >= 768) {
+      font-size: 20px;
+    }
   }
 
   .avatar-efect {
@@ -63,11 +66,6 @@
     font-size: 19px;
     color: #a5a8ad;
   }
-
- .saturate {
-  filter: saturate(0.5);
- }
-   
    
    @media (max-width: 320px) {
      .avatar-efect {
@@ -95,7 +93,7 @@
     width: 100vw;
     height: 300px;
     position: absolute;
-    top: -299px;
+    top: -295px;
     left: 0;
     right: 0;
     z-index: 1;
@@ -107,8 +105,13 @@
     @media only screen and (width >= 1350px) {
       mask: url(../static/img/wave-hero-md.svg);
       height: 335px;
-      top: -334px;
+      top: -330px;
       mask-size: cover;
+    }
+
+    @media only screen and (width >= 2100px) {
+      height: 500px;
+      top: -495px;
     }
 }
 

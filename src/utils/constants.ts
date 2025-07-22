@@ -11,6 +11,7 @@ export type Project = {
   info?: string
   title: string
   stack: string[]
+  functionalities: string[]
 }
 
  export const skills: string[] = [
@@ -58,7 +59,14 @@ export const projects: Project[] = [
     liveDemoSrc: "https://tropix-ui-docs.vercel.app/",
     info: "Una libreria de componentes de código abierto con soporte para temas claro y obscuro lista para instalar en proyectos de React mediante gestores de paquetes como yarn y npm.",
     title: "Tropix UI",
-    stack: ['react', 'typescript', 'vite', 'vitest', 'styledcomponents', 'emotion', 'npm']
+    stack: ['react', 'typescript', 'vite', 'vitest', 'styledcomponents', 'emotion', 'npm'],
+    functionalities: [
+      'Pruebas unitarias automatizadas', 
+      'Integración CI/CD',
+      'Diseño responsivo',
+      'Documentación con Stotybook',
+      "Tree shaking integrado"
+    ]
   },
   {
     id: 2,
@@ -67,7 +75,13 @@ export const projects: Project[] = [
     liveDemoSrc: "https://twitter-clone-3e2df.web.app/",
     info: "Este proyecto es un clon de la pagina de inicio de Twitter, esta construido con React, Material UI y Firebase.",
     title: "Twitter clone",
-    stack: ['react', 'javascript', 'css', 'materialui', 'firebase']
+    stack: ['react', 'javascript', 'css', 'materialui', 'firebase'],
+     functionalities: [
+      'Diseño responsivo',
+      'Inicio de sesión con google',
+      'Integración con Firebase',
+      'Integración con Material UI'
+    ]
   },
   {
     id: 3,
@@ -76,7 +90,12 @@ export const projects: Project[] = [
     liveDemoSrc: "https://ip-tracker64.netlify.app/",
     info: "Una aplicación que detecta la ubicación en base a la dirección ip, esta construida con Vanilla js y hace uso de la libreria Leaflet js para pintar el mapa.",
     title: "Ip Tracker",
-    stack: ['html', 'css', 'javascript']
+    stack: ['html', 'css', 'javascript'],
+    functionalities: [
+      'Diseño responsivo',
+      'Integración con Leaflet.js',
+      'Integración con detección de IP',
+    ]
   },
   // {
   //   imageSrc: taskapi,

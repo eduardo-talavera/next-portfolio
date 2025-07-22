@@ -1,5 +1,5 @@
-import { runActionByScroll } from '@/utils/helpers';
-import React, { FC, HTMLAttributes, ReactNode, useEffect, useRef } from 'react'
+
+import React, { FC, HTMLAttributes, ReactNode } from 'react'
 
 interface TerminalProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode | ReactNode[]
@@ -10,7 +10,7 @@ export const Terminal: FC<TerminalProps> = ({ children, className, ...props }) =
   return (
       <div 
         id="terminal" 
-        className={`mt-5 d-none d-sm-block ${className}`} 
+        className={`mt-5 ${className}`} 
         {...props}
       >
       <div id="header">

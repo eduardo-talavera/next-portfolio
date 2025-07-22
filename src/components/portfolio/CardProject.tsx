@@ -13,7 +13,7 @@ const CardProject = ({ project }: CardProjectProps) => {
 
   return (
     <>
-      <div className="col-10 col-sm-8 col-md-6 col-xl-4 item_project">
+      <div className="col-12 col-sm-8 col-md-6 col-xl-4 item_project">
         <div 
           className="box mt-5"
           onClick={() => openProject(project)}
@@ -30,7 +30,7 @@ const CardProject = ({ project }: CardProjectProps) => {
                       target="_blank"
                       data-toggle="tooltip"
                       data-placement="top"
-                      title="Ver Proyecto"
+                      title="Demostración en vivo"
                       className="item"
                     >
                     <FaGlobe size={50}/>
@@ -44,7 +44,7 @@ const CardProject = ({ project }: CardProjectProps) => {
                       target="_blank"
                       data-toggle="tooltip"
                       data-placement="top"
-                      title="Ir al codigo"
+                      title="Ir al código"
                       className="item"
                     >
                       <FaGithub size={50} />
@@ -56,7 +56,7 @@ const CardProject = ({ project }: CardProjectProps) => {
                     <button
                       data-toggle="tooltip"
                       data-placement="top"
-                      title="Info"
+                      title="Obtener mas información"
                       className="item"
                       onClick={() => openProject(project)}
                     >

@@ -14,13 +14,39 @@
 @import "modal";
 @import "welcome";
 @import "toggle_button";
+@import "skeleton";
 
+* {
+  box-sizing: border-box;
+}
 
 body {
   transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
 }
 
 .theme_text {
   color: var(--text) !important;
 }
 
+.title_text {
+  font-size: 30px;
+
+  @media  and and (width >= 768px) {
+    font-size: 35px;
+  }
+}
+
+.paragraph_text {
+  font-size: 18px;
+
+   @media  and and (width >= 768px) {
+    font-size: 20px;
+  }
+}
+
+.theme_toggle_mobile {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

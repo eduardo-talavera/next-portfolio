@@ -2,8 +2,8 @@
 
 #terminal {
   position: relative;
-  width: 630px;
-  height: 400px;
+  width: 90vw;
+  height: 260px;
   background: #0e0e0f;
   border: 1px solid #1f2937;
   position: relative;
@@ -15,6 +15,18 @@
   border-radius: 14px;
   margin: auto;
   margin-bottom: 20px;
+
+  @media only screen and (width >= 400px) {
+    height: 330px;
+  }
+
+  @media only screen and (width >= 570px) {
+    height: 430px;
+  }
+
+  @media only screen and (width >= 760px) {
+     width: 630px;
+  }
 
   #header {
     position: relative;
@@ -66,7 +78,6 @@
         border: 1px solid #0a435d;
         padding: 0.5rem;
         margin-top: 0.5rem;
-        max-width: 200px;
         outline: none !important;
       }
 

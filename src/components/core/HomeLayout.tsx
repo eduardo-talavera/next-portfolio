@@ -11,7 +11,7 @@ import Image from "next/image";
 import { ThemeToggle } from "../shared/ThemeToggle";
 import { useTheme } from "@/context/ThemeContext";
 import Modal from "../portfolio/Modal";
-import { GlobalStateProvider, useGlobalState } from "@/context/GlobalStateContext";
+import { useGlobalState } from "@/context/GlobalStateContext";
 import { Project } from "@/utils/constants";
 
 interface HomeLayoutProps {
@@ -33,7 +33,7 @@ function clickHandler(e: Event) {
   section.scrollIntoView({ behavior: "smooth" });
 }
 
-function scrollEfect(setHFixed: (value: boolean) => void) {
+function scrollEfect(setHeaderFixed: (value: boolean) => void) {
   const header = document.getElementById('intro');
 
   window.onscroll = function() {
@@ -41,10 +41,10 @@ function scrollEfect(setHFixed: (value: boolean) => void) {
 
     if (scroll > 105 && header && window.screen.width > 799) {
      header.classList.add('header_fixed');
-     setHFixed(true)
+     setHeaderFixed(true)
     } else if (header && header.classList.contains('header_fixed')) {
       header.classList.remove('header_fixed');
-      setHFixed(false);
+      setHeaderFixed(false);
     }
   }
 }
@@ -62,14 +62,14 @@ function smothScroll() {
 
 const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
 
-  const [, setHFixed] = useState(false);
+  const [headerFixed, setHeaderFixed] = useState(false);
 
   const { theme } = useTheme();
   const { state, closeProject } = useGlobalState();
   const { currentProject, showProject } = state;
 
   useEffect(() => {
-    scrollEfect(setHFixed);
+    scrollEfect(setHeaderFixed);
     smothScroll();
   }, []);
 
@@ -93,7 +93,7 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
             <div className="clearfix mt-xl-0">
               <Image
                 className="logo float-left mb-5 mt-5 pt-5 pt-md-1 mt-md-0 mr-md-3"
-                src={theme === 'light' ? logoLightTheme : logo}
+                src={(theme === 'light' && headerFixed) ? logoLightTheme : logo}
                 alt="logo"
                 width={135}
                 height={52.18}
@@ -108,7 +108,9 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
                 <ThemeToggle className='ml-5' />
               </div>
             </div>
+            <ThemeToggle className='d-md-none d-block theme_toggle_mobile' />
           </header>
+
 
           <section
             id="welcome"

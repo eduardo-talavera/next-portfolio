@@ -25,57 +25,58 @@
 
 
 #menu_h {
+
   .active {
-    color:#03A9F4;
+    color:#25b7fa;
   }
+
   position: fixed;
   z-index: 5;
-li, a {
-  margin: 75px 0 -55px 0;
-  color: white;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 1.8;
-  text-decoration: none;
-  text-transform: none;
-  list-style: none;
-  outline: 0;
-  display: none;
-}
-li {
-  width: 230px;
-  text-indent: 56px;}
-a:focus {
-  display: block;
-  // color: #333;
-  // background-color: #eee;
-  color: #03A9F4;
-  transition: all .5s;
-}
-h1 {
-  line-height: 0;
-  font-size: 4vw;
-  font-weight: 700;
-}
-h3 {
-  float: right;
-  line-height: .3;
-  font-size: 2.5vw;
-  font-weight: lighter;
-}
-h4 {
-  float: left;
-  margin-left: -2%;
-  font-size: 1.5vw;
-  font-weight: lighter;
-}
+
+  li, a {
+    margin: 75px 0 -55px 0;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.8;
+    text-decoration: none;
+    text-transform: none;
+    list-style: none;
+    outline: 0;
+    display: none;
+  }
+  li {
+    width: 230px;
+    text-indent: 56px;}
+  a:focus {
+    display: block;
+    color: #03A9F4;
+    transition: all .5s;
+  }
+  h1 {
+    line-height: 0;
+    font-size: 4vw;
+    font-weight: 700;
+  }
+  h3 {
+    float: right;
+    line-height: .3;
+    font-size: 2.5vw;
+    font-weight: lighter;
+  }
+  h4 {
+    float: left;
+    margin-left: -2%;
+    font-size: 1.5vw;
+    font-weight: lighter;
+  }
 
 
 #trigger, #burger, #burger:before, #burger:after {
   position: absolute;
   top: 25px;
   left: 25px;
-  background: #03A9F4;
+  background: #25b7fa;
   width: 30px;
   height: 5px;
   transition: .2s ease;
@@ -120,12 +121,14 @@ h4 {
 #menu {
   position: absolute;
   z-index: 5;
-  margin: 0; padding: 0;
+  margin: 0; 
+  padding: 0;
   width: 110px;
   height: 110px;
-  // background-color: #272b2f;
-  // background-color: rgba(0, 0, 0, 0.8);
-  background-color: #212429d7;
+
+  background-color: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(8px);
+
   border-bottom-right-radius: 100%;
   box-shadow: 0 2px 5px rgba(0,0,0,0.26);
   animation: not-checked-anim .2s both;

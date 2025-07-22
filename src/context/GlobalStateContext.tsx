@@ -19,7 +19,7 @@ export  type GlobalStateContextType = {
   state: GlobalState;
   dispatch: React.Dispatch<GlobalAction>;
   openProject: (project: Project) => void;
-  closeProject: () => void
+  closeProject: () => void;
 }
 
 
@@ -80,7 +80,7 @@ export const GlobalStateProvider = ({ children }: { children: ReactNode }) => {
 export const useGlobalState = () => {
   const context = useContext(GlobalStateContext);
   if (context === undefined) {
-    throw new Error('useGlobalState must be used within a GlobalStateProvider');
+    throw new Error('useGlobalState must be used with a GlobalStateProvider');
   }
 
   return context;

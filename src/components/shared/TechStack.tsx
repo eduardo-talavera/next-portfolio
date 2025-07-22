@@ -1,15 +1,16 @@
 'use client';
 
 import { runActionByScroll } from '@/utils/helpers';
-import React, { useEffect, useRef } from 'react'
+import React, { memo, useEffect, useRef } from 'react';
 
 interface TechStackProps {
   className?: string
   skills: string[]
   imgSize?: number
+  align?: 'center' | 'start'
 }
 
-export const TechStack = ({ className, skills, imgSize = 50,  ...props }: TechStackProps) => {
+const TechStack = memo(({ className, skills, imgSize = 50, align = 'center',  ...props }: TechStackProps) => {
 
   const ref = useRef<HTMLDivElement | null>(null)
 
@@ -20,7 +21,7 @@ export const TechStack = ({ className, skills, imgSize = 50,  ...props }: TechSt
   }, [])
 
   return (
-    <div {...props} className={`${className}`} ref={ref}>
+    <div {...props} className={`d-flex flex-wrap justify-content-${align} ${className}`} ref={ref}>
       {
         skills.map(skill => (
           <img
@@ -39,5 +40,8 @@ export const TechStack = ({ className, skills, imgSize = 50,  ...props }: TechSt
     </div>
   )
 }
+)
 
+TechStack.displayName = 'TechStack'
 
+export default TechStack

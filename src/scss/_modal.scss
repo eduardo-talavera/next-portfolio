@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 4;
+  z-index: 7;
 
   .modal_overlay {
     background-color: var(--modalOverlay);
@@ -23,8 +23,8 @@
 
     .modal_content {
       background-color: var(--headerBg);
-      width: 50vw;
-      height: 500px;
+      width: 100vw;
+      height: 100vh;
       padding: 2rem;
       border-radius: 1rem;
       position: relative;
@@ -42,6 +42,12 @@
         width: 350px;
         height: 200px;
         border-radius: 1rem;
+      }
+
+
+      @media screen and (width >= 1000px) {
+        width: 50vw;
+        height: 500px;
       }
     }
   }

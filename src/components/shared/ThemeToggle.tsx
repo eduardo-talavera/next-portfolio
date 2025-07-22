@@ -1,9 +1,10 @@
 'use client';
 
 import { useTheme } from '@/context/ThemeContext';
-import { ButtonHTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
-export interface ThemeToggleProps extends ButtonHTMLAttributes<HTMLButtonElement>{
+export interface ThemeToggleProps extends HTMLAttributes<HTMLDivElement>{
   className?: string
 }
 
@@ -11,8 +12,12 @@ export const ThemeToggle = ({ className, ...props }: ThemeToggleProps) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button className={`toggle_button ${className}`} onClick={toggleTheme} {...props}>
-      {theme === 'light' ? '🌙 Modo obscuro' : '☀️ Modo claro'}
-    </button>
+    <div className={`toggle_button ${className}`} {...props}>
+     {
+        theme === 'light' 
+          ? <FaMoon onClick={toggleTheme} size={25} /> 
+          : <FaSun onClick={toggleTheme} size={25} />
+     }
+    </div>
   );
 }

@@ -2,10 +2,10 @@
   height: 30px;
   padding: 0 0.5rem;
   padding-right: 1rem;
-  border: none;
-  border-radius: 8px;
-  background: #2d445e;
   margin-top: -3px;
-  color: white;
-  outline: none !important;
+ 
+  svg {
+     color: white;
+     cursor: pointer;
+  }
 }

@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portafolio Edgar Eduardo Talavera",
   description: "Portafolio Edgar Eduardo Talavera",
+  icons: {
+    icon: "/favicon.ico", // ruta desde la carpeta /public
+  },
 };
 
 export default function RootLayout({
