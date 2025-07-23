@@ -30,6 +30,11 @@ export const ModalSkeleton = () => {
       <div className={`skeleton-${theme} skeleton-func`}></div>
       <div className={`skeleton-${theme} skeleton-func`}></div>
       <div className={`skeleton-${theme} skeleton-func`}></div>
+
+      <div className="modal-actions d-flex flex-wrap">
+        <div className={`skeleton-${theme} skeleton-action mb-2 mb-md-0 mr-2`}></div>
+        <div className={`skeleton-${theme} skeleton-action`}></div>
+      </div>
     </div>
   )
 }

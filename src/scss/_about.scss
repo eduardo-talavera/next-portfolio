@@ -30,14 +30,14 @@
       padding: 10px;
       width: 400px;
       z-index: 2;
-      background-color: #25b7fa;
+      background-color: var(--avatarBg);
     }
     
     .box{
       width: 400px;
       height: 400px;
       position: absolute;
-      background-color: #25b7fa;
+      background-color: var(--avatarBg);
       top:0;
       transform: rotate(-10deg);
     }
@@ -64,7 +64,7 @@
 
   .text-about {
     font-size: 19px;
-    color: #a5a8ad;
+    //color: #a5a8ad;
   }
    
    @media (max-width: 320px) {

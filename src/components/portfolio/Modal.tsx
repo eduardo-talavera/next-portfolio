@@ -7,6 +7,7 @@ import { FaCheckCircle, FaRegWindowClose } from "react-icons/fa";
 import { useGlobalState } from "@/context/GlobalStateContext";
 import TechStack from "../shared/TechStack";
 import { ModalSkeleton } from "./ModalSkeleton";
+import { FaGithub, FaGlobe } from "react-icons/fa";
 
 export interface ModalProps {
   project: Project;
@@ -36,23 +37,44 @@ function Modal({ project, onClickOutside }: ModalProps) {
               size={30}
               onClick={closeProject}
             />
-           {
-            !hiddeSkeleton &&  <ModalSkeleton />
-           }
+            {
+              !hiddeSkeleton &&  <ModalSkeleton />
+            }
           
          
-          <h3 className="theme_text">{ project.title }</h3>
-          <p className="theme_text mt-2">{ project.info }</p>
-          <h5 className="theme_text">Tegnologias usadas:</h5>
-          <TechStack skills={project.stack} imgSize={30} align="start" />
-          <div className="mt-3">
-          {
-            project.functionalities.map(item=> <div key={item} className="d-flex align-items-center"> 
-              <FaCheckCircle color="#38c75d" size={16} />
-              <span className="theme_text ml-2">{ item }</span>
-            </div>)
-          }
-          </div>
+            <h3 className="theme_title">{ project.title }</h3>
+            <p className="theme_text mt-2">{ project.info }</p>
+            <h5 className="theme_title">Tegnologias usadas:</h5>
+            <TechStack skills={project.stack} imgSize={30} align="start" />
+            <div className="mt-3">
+            {
+              project.functionalities.map(item=> <div key={item} className="d-flex align-items-center"> 
+                <FaCheckCircle color="#38c75d" size={16} />
+                <span className="theme_text ml-2">{ item }</span>
+              </div>)
+            }
+            </div>
+
+            <div className="actions d-flex flex-wrap">
+                <a 
+                  href={project.liveDemoSrc} 
+                  rel="noreferrer" 
+                  target="_blank" 
+                  className="mr-2 d-flex justify-content-center align-items-center mb-2 mb-md-0"
+                >
+                  <span className="mr-2">Demostración en vivo</span>
+                  <FaGlobe />
+                </a>
+                <a 
+                  href={project.sourceCodeSrc} 
+                  rel="noreferrer" 
+                  target="_blank" 
+                  className="d-flex justify-content-center align-items-center"
+                >
+                  <span className="mr-2">Ver código</span>
+                  <FaGithub />      
+                </a>
+            </div>
           </div>
         </div>
       </div>

@@ -53,7 +53,7 @@ export default function AboutMe() {
 
           <div className="col-11 col-lg-6 animate__animated" ref={textAboutRef}>
             <div className="mt-5 pt-5 pt-lg-0 mt-lg-0"></div>
-            <h2 className="theme_text mt-5 mt-md-0 text-center text-md-left">
+            <h2 className="theme_title mt-5 mt-md-0 text-center text-md-left">
               Sobre mi
             </h2>
            <div className="text-center text-md-left mb-5 mb-md-0">
@@ -72,7 +72,7 @@ export default function AboutMe() {
 
         <div className="row justify-content-center mt-5">
           <div className="col-10 col-md-8 mt-5">
-            <h2 className="theme_text text-center text-md-left">Pila Tecnológica</h2>
+            <h2 className="theme_title text-center text-md-left">Pila Tecnológica</h2>
             <TechStack skills={skills} imgSize={50} className="py-5 animate__animated" />
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function AboutMe() {
               <span className="body__item_title">$ location --current</span>
               <div className="d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center">
-                  <FaMapMarkerAlt color="white" />
+                  <FaMapMarkerAlt className="icon_location" />
                   <span className="body__item_location">Michoacán México</span>
                 </div>
                 <span className="body__item_time d-none d-sm-block">79ms</span>

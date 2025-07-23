@@ -1,18 +1,25 @@
 
 :root {
-  --primaryTheme: #8ba5b7;
-  --text: #232121;
-  --secondaryTheme: #c2d8e7;
-  --background: #e3eff7;
+  --primaryTheme: #FFFFFF;
+  --text:	#111827;
+  --secondaryTheme: #F3F4F6;
+  --background: #FFFFFF;
   --headerBg: #ffffff;
   --info: #0a94d4;
+  --avatarBg: #1e96cd;
   --capaOverlayBg: rgb(0, 0, 0, .5);
-  --animatedCircleBg: #0c3c69;
+  --animatedCircleBg: #1e96cd36;
   --socialFooterBg: #232121;
   --socialFooterColor: #ffffff;
-  --projectCardBoxShadow: -4px 5px 25px 9px rgb(0 0 0 / 39%);
-  --overlayProject: rgb(37 183 250 / 80%);
-  --actionIconColor: #232121;
+  --projectCardBoxShadow: 8px 14px 5px 0px rgba(0,0,0,0.16);
+  --overlayProject: rgba(0, 0, 0, .6);
+  --actionIconColor: #1e96cd;
   --heroBg: url('../../static/img/city-day.webp');
   --modalOverlay: rgb(0, 0, 0, .3);
+  --themeTitle: #14B8A6;
+  --terminalPrompt: #1e96cd;
+  --terminalOutput: #62666e;
+  --terminalBackground: #ffffff;
+  --terminalBorder: 1px solid #b6bcc7;
+  --modalAnchor: #F3F4F6;
 }
