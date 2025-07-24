@@ -20,7 +20,7 @@ export default function Portfolio() {
                 <div>
                  <div className="container-sm">
                   <h2 className="theme_title mb-5 text-center text-md-left">
-                    Portafolio
+                    Mi portafolio
                   </h2>
                   <div className="row row-projects justify-content-center">
                       {projects.map((project, i) => (

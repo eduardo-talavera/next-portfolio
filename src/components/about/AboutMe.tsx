@@ -2,15 +2,12 @@
 
 import React, { useEffect, useRef } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import profile from "@/static/img/logo-avatar-5.webp";
-import profileDark from "@/static/img/logo-avatar-6.webp"
+import profile from "@/static/img/logo-avatar-5-br.webp";
 import Image from "next/image";
 import { Terminal } from "../shared/Terminal";
 import TechStack from "../shared/TechStack";
-import { runActionByScroll } from "@/utils/helpers";
 import { skills } from '@/utils/constants';
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { useTheme } from "@/context/ThemeContext";
 
 
 export default function AboutMe() {
@@ -19,28 +16,16 @@ export default function AboutMe() {
     from: { opacity: 0 },
   });
 
-  const profileImgref = useRef<HTMLDivElement | null>(null);
-  const textAboutRef = useRef<HTMLDivElement | null>(null);
-
-  const { theme } = useTheme();
-  
-  useEffect(() => {
-    runActionByScroll(100, () => {
-      profileImgref.current?.classList.add('animate__fadeInLeft');
-      textAboutRef.current?.classList.add('animate__fadeInUp');
-    })
-  }, [])
-
   return (
     <animated.div id="about" style={fade_animation}>
       <div className="container">
         <div className="row justify-content-around mt-5 mt-lg-0 pt-5 pt-md-2">
 
-          <div className="col-10 col-lg-4">
-            <div className="avatar-efect animate__animated" ref={profileImgref}>
+          <div className="col-10 col-lg-2">
+            <div className="avatar-efect animate__animated">
                <Image
-                  className="about-img shadow"
-                  src={theme === 'light' ? profile : profileDark}
+                  className="about-img"
+                  src={profile}
                   alt="profile img"
                   width={400}
                   height={400}
@@ -51,29 +36,47 @@ export default function AboutMe() {
             </div>
           </div>
 
-          <div className="col-11 col-lg-6 animate__animated" ref={textAboutRef}>
-            <div className="mt-5 pt-5 pt-lg-0 mt-lg-0"></div>
+          <div className="col-11 col-lg-6 animate__animated mt-md-5">
+            <div className="mt-md-5 pt-5 pt-lg-0 mt-lg-0"></div>
             <h2 className="theme_title mt-5 mt-md-0 text-center text-md-left">
               Sobre mi
             </h2>
            <div className="text-center text-md-left mb-5 mb-md-0">
-              <p className="mt-3 theme_text paragraph_text">
-                Soy un <strong>desarrollador frontend</strong> con más de 4 años de experiencia creando soluciones escalables y modernas con
+              <p className="mt-3 theme_text paragraph_text pl-md-3">
+                Soy un <strong>desarrollador web</strong> con más de 4 años de experiencia creando soluciones escalables y modernas con
                 React, Next.js, Vue, TypeScript y Node.js. Me especializo en diseño de sistemas reutilizables,
                 automatización con CI/CD, y despliegues en la nube (AWS). Enfocado en eficiencia, calidad de código y
                 liderazgo técnico.
               </p>
            </div>
 
+          <div className="py-3 py-md-5"></div>
+
+
+           <div className="mt-5 skills">
+            <h2 className="theme_title text-center text-md-left">Lo que puedo hacer</h2>
+            <ul className="mt-3">
+              <li className="theme_text mb-2 mb-md-1">Crear interfaces de usuario responsivas con React, Typescript, Vite, Next y Vue</li>
+              <li className="theme_text mb-2 mb-md-1">Desarrollar sistemas de diseño con React, Emotion, Tailwind, Vite, Storybook y Npm</li>
+              <li className="theme_text mb-2 mb-md-1">Crear librerias de componentes con diferentes formatos: ESM, CJS, UMD...</li>
+              <li className="theme_text mb-2 mb-md-1">Implementar arquitecturas de software escalables</li>
+              <li className="theme_text mb-2 mb-md-1">Automatizar pruebas unitarias con Vitest y Testing Library</li>
+              <li className="theme_text mb-2 mb-md-1">Construir API'S REST y GraphQL con Node y Express</li>
+              <li className="theme_text mb-2 mb-md-1">Desarrollar API'S serverless con AWS y Serverless Framework</li>
+              <li className="theme_text mb-2 mb-md-1">Implementar ambientes de desarrollo con AWS Amplify</li>
+              <li className="theme_text mb-2 mb-md-1">Configurar Pipelines de CI/CD con GitHub Actions</li>
+            </ul>
+           </div>
+
           </div>
         </div>
 
-        <div className="py-5 d-none d-md-block"></div>
+        <div className="py-5"></div>
 
-        <div className="row justify-content-center mt-5">
+        <div className="row justify-content-center">
           <div className="col-10 col-md-8 mt-5">
-            <h2 className="theme_title text-center text-md-left">Pila Tecnológica</h2>
-            <TechStack skills={skills} imgSize={50} className="py-5 animate__animated" />
+            <h2 className="theme_title text-center text-md-left">Mi pila Tecnológica</h2>
+              <TechStack skills={skills} imgSize={50} className="py-3 animate__animated" />
           </div>
         </div>
       
