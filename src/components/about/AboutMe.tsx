@@ -62,8 +62,8 @@ export default function AboutMe() {
               <li className="theme_text mb-2 mb-md-1">Crear librerias de componentes con diferentes formatos: ESM, CJS, UMD...</li>
               <li className="theme_text mb-2 mb-md-1">Implementar arquitecturas de software escalables</li>
               <li className="theme_text mb-2 mb-md-1">Automatizar pruebas unitarias con Vitest y Testing Library</li>
-              <li className="theme_text mb-2 mb-md-1">Construir API&aposS REST y GraphQL con Node y Express</li>
-              <li className="theme_text mb-2 mb-md-1">Desarrollar API&aposS serverless con AWS y Serverless Framework</li>
+              <li className="theme_text mb-2 mb-md-1">Construir API&apos;S REST y GraphQL con Node y Express</li>
+              <li className="theme_text mb-2 mb-md-1">Desarrollar API&apos;S serverless con AWS y Serverless Framework</li>
               <li className="theme_text mb-2 mb-md-1">Implementar ambientes de desarrollo con AWS Amplify</li>
               <li className="theme_text mb-2 mb-md-1">Configurar Pipelines de CI/CD con GitHub Actions</li>
             </ul>
