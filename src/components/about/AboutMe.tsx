@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useSpring, animated } from "@react-spring/web";
 import profile from "@/static/img/logo-avatar-5-br.webp";
 import Image from "next/image";
@@ -41,6 +41,7 @@ export default function AboutMe() {
             <h2 className="theme_title mt-5 mt-md-0 text-center text-md-left">
               Sobre mi
             </h2>
+
            <div className="text-center text-md-left mb-5 mb-md-0">
               <p className="mt-3 theme_text paragraph_text pl-md-3">
                 Soy un <strong>desarrollador web</strong> con más de 4 años de experiencia creando soluciones escalables y modernas con
@@ -61,8 +62,8 @@ export default function AboutMe() {
               <li className="theme_text mb-2 mb-md-1">Crear librerias de componentes con diferentes formatos: ESM, CJS, UMD...</li>
               <li className="theme_text mb-2 mb-md-1">Implementar arquitecturas de software escalables</li>
               <li className="theme_text mb-2 mb-md-1">Automatizar pruebas unitarias con Vitest y Testing Library</li>
-              <li className="theme_text mb-2 mb-md-1">Construir API'S REST y GraphQL con Node y Express</li>
-              <li className="theme_text mb-2 mb-md-1">Desarrollar API'S serverless con AWS y Serverless Framework</li>
+              <li className="theme_text mb-2 mb-md-1">Construir API&aposS REST y GraphQL con Node y Express</li>
+              <li className="theme_text mb-2 mb-md-1">Desarrollar API&aposS serverless con AWS y Serverless Framework</li>
               <li className="theme_text mb-2 mb-md-1">Implementar ambientes de desarrollo con AWS Amplify</li>
               <li className="theme_text mb-2 mb-md-1">Configurar Pipelines de CI/CD con GitHub Actions</li>
             </ul>
