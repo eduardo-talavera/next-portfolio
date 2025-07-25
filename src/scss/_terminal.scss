@@ -69,6 +69,7 @@
 
       .body__item_title {
         color: var(--terminalPrompt);
+        font-weight: bold;
       }
 
       .body__item_info_box {
@@ -76,6 +77,7 @@
         padding: 0.5rem;
         margin-top: 0.5rem;
         outline: none !important;
+        font-weight: bold;
       }
 
       .body__item_location {
