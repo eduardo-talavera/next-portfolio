@@ -99,7 +99,7 @@ export default function AboutMe() {
           </div>
 
           <div className="body__item">
-            <span className="body__item_title">$ download resume.pdf</span>
+            <span className="body__item_title">$ cat resume.pdf</span>
             <div className="d-flex align-items-center justify-content-between">
               <a 
                 href="/pdf/CV_Edgar_Eduardo_Talavera_Desarrollador_Frontend.pdf" 

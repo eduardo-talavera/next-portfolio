@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Project } from "@/utils/constants";
 import { useOutsideAlerter } from "@/hooks/useOutsideAlerter";
-import { FaCheckCircle, FaRegWindowClose } from "react-icons/fa";
+import { FaRegWindowClose } from "react-icons/fa";
 import { useGlobalState } from "@/context/GlobalStateContext";
 import TechStack from "../shared/TechStack";
 import { ModalSkeleton } from "./ModalSkeleton";
@@ -46,14 +46,13 @@ function Modal({ project, onClickOutside }: ModalProps) {
             <p className="theme_text mt-2">{ project.info }</p>
             <h5 className="theme_title">Tegnologias usadas:</h5>
             <TechStack skills={project.stack} imgSize={30} align="start" />
-            <div className="mt-3">
+            <ul style={{ paddingLeft: '1rem' }} className="mt-3">
             {
-              project.functionalities.map(item=> <div key={item} className="d-flex align-items-center"> 
-                <FaCheckCircle color="#38c75d" size={16} />
-                <span className="theme_text ml-2">{ item }</span>
-              </div>)
+              project.functionalities.map(item => 
+                <li key={item} className="theme_text">{ item }</li>
+              )
             }
-            </div>
+            </ul>
 
             <div className="actions d-flex flex-wrap">
                 <a 
@@ -62,7 +61,7 @@ function Modal({ project, onClickOutside }: ModalProps) {
                   target="_blank" 
                   className="mr-2 d-flex justify-content-center align-items-center mb-2 mb-md-0"
                 >
-                  <span className="mr-2">Demostración en vivo</span>
+                  <span className="mr-2">{ project.haveDocs ? 'Documentación' : 'Demostración' }</span>
                   <FaGlobe />
                 </a>
                 <a 

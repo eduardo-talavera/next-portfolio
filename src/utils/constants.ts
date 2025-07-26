@@ -12,6 +12,7 @@ export type Project = {
   title: string
   stack: string[]
   functionalities: string[]
+  haveDocs?: boolean
 }
 
  export const skills: string[] = [
@@ -62,11 +63,13 @@ export const projects: Project[] = [
     stack: ['react', 'typescript', 'vite', 'vitest', 'styledcomponents', 'emotion', 'npm'],
     functionalities: [
       'Pruebas unitarias automatizadas', 
-      'Integración CI/CD',
-      'Diseño responsivo',
-      'Documentación con Stotybook',
-      "Tree shaking integrado"
-    ]
+      'Integración CI/CD con GitHub Actions y Semantic Release',
+      'Diseño responsivo adaptado a multiples dispositivos',
+      'Documentación con Storybook',
+      "Tree shaking integrado",
+      "Soporte para formatos CJS y ESM"
+    ],
+    haveDocs: true
   },
   {
     id: 2,
@@ -77,11 +80,14 @@ export const projects: Project[] = [
     title: "Twitter clone",
     stack: ['react', 'javascript', 'css', 'materialui', 'firebase'],
      functionalities: [
-      'Diseño responsivo',
-      'Inicio de sesión con google',
+      'Diseño responsivo adaptado a multiples dispositivos',
+      'Integración de Inicio de sesión con google',
       'Integración con Firebase',
+      'Funcionalidad para hacer publicaciones',
+      'Persistencia de datos con Firestore',
       'Integración con Material UI'
-    ]
+    ],
+    haveDocs: false
   },
   {
     id: 3,
@@ -92,25 +98,13 @@ export const projects: Project[] = [
     title: "Ip Tracker",
     stack: ['html', 'css', 'javascript'],
     functionalities: [
-      'Diseño responsivo',
+      'Diseño responsivo adaptado a multiples dispositivos',
       'Integración con Leaflet.js',
-      'Integración con detección de IP',
-    ]
-  },
-  // {
-  //   imageSrc: taskapi,
-  //   sourceCodeSrc: 'https://github.com/eduardo-talavera',
-  //   liveDemoSrc: "https://taskapi.netlify.app/",
-  //   info: "Taskapi es una aplicación para administrar tareas, esta construida con el PERN stack (PostgreSQL, Express, React, Node) y Redux para el manejo del estado global, aun esta en desarrollo, por lo que ire añadiendo nuevas funcionalidades.",
-  //   title: "Taskapi"
-  // },
-  // {
-  //   imageSrc: imgFC,
-  //   sourceCodeSrc: 'https://github.com/eduardo-talavera',
-  //   liveDemoSrc: "https://facebook-clone-8c167.web.app/",
-  //   info: "Este proyecto es un clon de la pagina de inicio de facebook, cuenta con la funcionalidad para hecer publicaciones y esta construido con las tecnologias: React js, Material-UI y Firebase.",
-  //   title: "Facebook clone"
-  // }
+      'Integración con detección automatica de IP',
+      'Geocodificación Inversa en base a dirección obtenida mediante la IP'
+    ],
+    haveDocs: false
+  }
 ];
 
 
