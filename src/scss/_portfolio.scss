@@ -1,15 +1,15 @@
 #portfolio {
 
-  min-height: 100vh;
+  //min-height: 100vh;
   padding-top: 50px;
-  padding-bottom: 500px;
+  padding-bottom: 200px;
   background: var(--secondaryTheme);
   width: 100vw;
   position: relative;
  
   .content_area {
     position: relative;
-    padding-bottom: 150px;
+    padding-bottom: 200px;
     top: 0;
     z-index: 2;
     width: 100%;
@@ -181,7 +181,7 @@
 
 .area{
   width: 100%;
-  min-height:100vh; 
+  //min-height:100vh; 
 }
 
 .circles{
