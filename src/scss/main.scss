@@ -30,7 +30,11 @@ body {
 }
 
 .theme_title {
-  color: var(--themeTitle);
+  //color: var(--themeTitle);
+  background: linear-gradient(130deg, #16ceb5, #159de9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #16ceb5;
 }
 
 .title_text {
