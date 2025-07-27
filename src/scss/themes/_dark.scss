@@ -6,8 +6,9 @@ html.dark {
   --background: #1E293B;
   --headerBg: #0F172A;
   --info: #0a94d4;
-  --avatarBg: #25b7fa ;
-  --capaOverlayBg: rgba(0, 0, 0, .5);
+  --avatarBg: #25b7fa;
+  //--capaOverlayBg: rgba(0, 0, 0, .5);
+  --capaOverlayBg: linear-gradient(130deg, #297daa29, #0a9086c4);
   --animatedCircleBg: rgba(37, 183, 250, .1);
   --socialFooterColor: #232121;
   --socialFooterBg: #ffffff;
