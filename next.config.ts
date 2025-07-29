@@ -9,7 +9,10 @@ const nextConfig: NextConfig = {
         hostname: 'skillicons.dev'
       }
     ]
-  }
+  },
+  compress: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
 };
 
 export default nextConfig;

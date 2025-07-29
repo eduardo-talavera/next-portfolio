@@ -10,9 +10,11 @@ import SocialLinks from "../shared/SocialLinks";
 import Image from "next/image";
 import { ThemeToggle } from "../shared/ThemeToggle";
 import { useTheme } from "@/context/ThemeContext";
-import Modal from "../portfolio/Modal";
+import dynamic from "next/dynamic";
 import { useGlobalState } from "@/context/GlobalStateContext";
 import { Project } from "@/utils/constants";
+
+const Modal = dynamic(() => import("../portfolio/Modal"));
 
 interface HomeLayoutProps {
   children: ReactNode | ReactNode[]
