@@ -19,9 +19,9 @@ export default function AboutMe() {
   return (
     <animated.div id="about" style={fade_animation}>
       <div className="container">
-        <div className="row justify-content-around mt-5 mt-lg-0 pt-5 pt-md-2">
+        <div className="row justify-content-center mt-5 mt-lg-0 pt-5">
 
-          <div className="col-10 col-lg-2">
+          <div className="col-10 col-lg-5">
             <div className="avatar-efect animate__animated">
                <Image
                   className="about-img"
@@ -32,54 +32,68 @@ export default function AboutMe() {
                   priority
                   style={{ height: 'auto' }}
               />
-              <div className="box"></div>
+
+              <Image
+                className="blob-img"
+                src='/blob.webp'
+                alt="profile img"
+                width={500}
+                height={500}
+                priority
+                style={{ height: 'auto' }}
+              />
             </div>
           </div>
 
+
           <div className="col-11 col-lg-6 animate__animated mt-md-5">
-            <div className="mt-md-5 pt-5 pt-lg-0 mt-lg-0"></div>
+            <div className="py-2 py-md-0"></div>
             <h2 className="theme_title mt-5 mt-md-0 text-center text-md-left">
               Sobre mi
             </h2>
 
-           <div className="text-center text-md-left mb-5 mb-md-0">
-              <p className="mt-3 theme_text paragraph_text pl-md-3">
+           <div className="text-center text-md-left mb-4 mb-md-0">
+              <p className="mt-3 theme_text paragraph_text">
                 Soy un <strong>desarrollador web</strong> con más de 4 años de experiencia creando soluciones escalables y modernas con
                 React, Next.js, Vue, TypeScript y Node.js. Me especializo en diseño de sistemas reutilizables,
                 automatización con CI/CD, y despliegues en la nube (AWS). Enfocado en eficiencia, calidad de código y
                 liderazgo técnico.
               </p>
+              <p className="theme_text paragraph_text">
+                Soy entusiasta de aprender cosas nuevas y aplicar mis conocimientos en proyectos desafiantes.
+              </p>
            </div>
+        </div>
+      </div>
 
-          <div className="py-3 py-md-5"></div>
-
-
-           <div className="mt-5 skills">
-            <h2 className="theme_title text-center text-md-left">Lo que puedo hacer</h2>
-            <ul className="mt-3">
-              <li className="theme_text mb-2 mb-md-1">Crear interfaces de usuario responsivas con React, Typescript, Vite, Next y Vue</li>
-              <li className="theme_text mb-2 mb-md-1">Desarrollar sistemas de diseño con React, Emotion, Tailwind, Vite, Storybook y Npm</li>
-              <li className="theme_text mb-2 mb-md-1">Crear librerias de componentes con diferentes formatos: ESM, CJS, UMD...</li>
-              <li className="theme_text mb-2 mb-md-1">Implementar arquitecturas de software escalables</li>
-              <li className="theme_text mb-2 mb-md-1">Automatizar pruebas unitarias con Vitest y Testing Library</li>
-              <li className="theme_text mb-2 mb-md-1">Construir API&apos;S REST y GraphQL con Node y Express</li>
-              <li className="theme_text mb-2 mb-md-1">Desarrollar API&apos;S serverless con AWS y Serverless Framework</li>
-              <li className="theme_text mb-2 mb-md-1">Implementar ambientes de desarrollo con AWS Amplify</li>
-              <li className="theme_text mb-2 mb-md-1">Configurar Pipelines de CI/CD con GitHub Actions</li>
-            </ul>
-           </div>
-
+        <div className="row justify-content-center mt-md-5">
+          <div className="col-11 col-md-8">
+              <div className="py-1 py-md-2"></div>
+              <div className="mt-5 skills">
+                <h2 className="theme_title text-center text-md-left">Habilidades</h2>
+                <ul className="mt-3">
+                  <li className="theme_text mb-2 mb-md-1">Desarrollo de interfaces de usuario responsivas con React, Typescript, Vite, Next y Vue</li>
+                  <li className="theme_text mb-2 mb-md-1">Desarrollo de sistemas de diseño con React, Emotion, Tailwind, Vite, Storybook y Npm</li>
+                  <li className="theme_text mb-2 mb-md-1">Creacion librerias de componentes con diferentes formatos: ESM, CJS, UMD...</li>
+                  <li className="theme_text mb-2 mb-md-1">Implementación de arquitecturas de software escalables</li>
+                  <li className="theme_text mb-2 mb-md-1">Automatización de pruebas unitarias con Vitest y Testing Library</li>
+                  <li className="theme_text mb-2 mb-md-1">Construcción de API&apos;S REST y GraphQL con Node y Express</li>
+                  <li className="theme_text mb-2 mb-md-1">Desarrollo de API&apos;S serverless con AWS y Serverless Framework</li>
+                  <li className="theme_text mb-2 mb-md-1">Implementación de ambientes de desarrollo con AWS Amplify</li>
+                  <li className="theme_text mb-2 mb-md-1">Configuración de Pipelines de CI/CD con GitHub Actions</li>
+                </ul>
+              </div>
           </div>
         </div>
 
-        <div className="py-5"></div>
-
+        <div className="py-md-5 py-2"></div>
         <div className="row justify-content-center">
           <div className="col-10 col-md-8 mt-5">
-            <h2 className="theme_title text-center text-md-left">Mi pila Tecnológica</h2>
+            <h2 className="theme_title text-center text-md-left">Pila Tecnológica</h2>
               <TechStack skills={skills} imgSize={50} className="py-3 animate__animated" />
           </div>
         </div>
+
       
         <Terminal className="mt-3">
           <div className="body__item d-none d-md-block">

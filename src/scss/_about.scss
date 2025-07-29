@@ -20,23 +20,23 @@
 
   .avatar-efect {
     
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .about-img{
+    .about-img {
       position: relative;
       padding: 10px;
       width: 400px;
       z-index: 2;
+      animation: surf 5s infinite ease-in-out;
     }
     
-    .box{
-      width: 400px;
-      height: 400px;
+    .blob-img {
       position: absolute;
-      top:0;
-      transform: rotate(-10deg);
+      z-index: 0;
+      height: auto !important;
     }
   }
 
@@ -49,13 +49,14 @@
     }
     .avatar-efect {
       margin: auto;
+
      .about-img{
        width: 250px;
      }
-     .box{
-       width: 250px;
-       height: 250px;
-      }
+
+     .blob-img {
+      width: 300px;
+     }
     }
    }
 
@@ -63,18 +64,14 @@
     font-size: 18px;
   }
    
-   @media (max-width: 320px) {
-     .avatar-efect {
-      margin: auto; 
-      .about-img{
-        width: 200px;
-      }
-      .box{
-        width: 200px;
-        height: 200px;
-      }
-    }
-  }
+  //  @media (max-width: 320px) {
+  //    .avatar-efect {
+  //     margin: auto; 
+  //     .about-img{
+  //       width: 200px;
+  //     }
+  //   }
+  // }
 
     .skills {
       ul {
@@ -86,10 +83,6 @@
             font-size: 20 !important;
           } 
         }
-      }
-
-      @media screen and (width >= 768px) {
-        margin-left: -10rem;
       }
     }
 }
@@ -130,7 +123,15 @@
 
   /*WAVE FINAL*/
 
-/* Add this class to the container element */
+@keyframes surf {
+  0%, 100% {
+    translate: 0;
+  }
+  50% {
+    translate: 0 2rem;
+    rotate: 2deg;
+  }
+}
 
 
 
