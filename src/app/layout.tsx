@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import '../scss/main.scss';
 import { ThemeProvider } from "@/context/ThemeContext";
 import { GlobalStateProvider } from "@/context/GlobalStateContext";
-import Head from "next/head";
+//import Head from "next/head";
 
 
 const geistSans = Geist({
@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      {/* <Head>
          <link
           rel="preload"
           as="image"
@@ -42,7 +42,7 @@ export default function RootLayout({
           as="image"
           href="/city-night-2.webp"
         />
-      </Head>
+      </Head> */}
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>
           <GlobalStateProvider>

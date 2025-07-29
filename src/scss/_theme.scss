@@ -72,12 +72,12 @@ body {
 }
 
 #hero {
-  // background-image: var(--heroBg);
-  // background-size: cover;
-  // min-height: 90vh;
-  // width: 100vw;
-  // background-repeat: no-repeat;
-  // background-position: center center;
+  background-image: var(--heroBg);
+  background-size: cover;
+  min-height: 90vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center center;
 
   @media screen and (width >= 600px){
      min-height: 100vh !important;
