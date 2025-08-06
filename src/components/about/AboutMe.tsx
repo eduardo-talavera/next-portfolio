@@ -45,11 +45,13 @@ export default function AboutMe() {
         })
       })
 
-      runActionByScroll(200, () => {
-        imageRef.current?.classList.add('animate__fadeInUp', 'show-element');
-        textAboutRef.current?.classList.add('animate__fadeInRight', 'show-element');
-
+      runActionByScroll(300, () => {
+        imageRef.current?.classList.add('animate__fadeIn', 'show-element');
         imageRef.current?.classList.remove('hidde-element');
+      })
+
+      runActionByScroll(500, () => {
+        textAboutRef.current?.classList.add('animate__fadeIn', 'show-element');
         textAboutRef.current?.classList.remove('hidde-element');
       })
     }, [])
