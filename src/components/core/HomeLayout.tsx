@@ -5,6 +5,7 @@ import Menu from "./Menu";
 import MenuDesktop from "./MenuDesktop";
 import Footer from "./Footer";
 import logo from "@/static/img/et-dev-logo.webp";
+import { useThemeMode } from "tropix-ui";
 import logoLightTheme from '@/static/img/logo-dev-2-removebg.webp'
 import SocialLinks from "../shared/SocialLinks";
 import Image from "next/image";
@@ -69,10 +70,13 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
   const { theme } = useTheme();
   const { state, closeProject } = useGlobalState();
   const { currentProject, showProject } = state;
+  const { setIsDark } = useThemeMode();
 
   useEffect(() => {
     scrollEfect(setHeaderFixed);
     smothScroll();
+    if (theme === 'dark') setIsDark(true)
+    else setIsDark(false)  
   }, []);
 
   return (

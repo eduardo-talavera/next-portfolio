@@ -16,7 +16,7 @@ const TechStack = memo(({ className, skills, imgSize = 50, align = 'center',  ..
 
   useEffect(() => {
     runActionByScroll(900, () => {
-      ref.current?.classList.add('animate__bounce')
+      ref.current?.classList.add('animate__fadeInUp')
     })
   }, [])
 

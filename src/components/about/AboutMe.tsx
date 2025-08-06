@@ -1,13 +1,15 @@
 'use client';
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
+import { CircularProgress } from 'tropix-ui';
 import profile from "@/static/img/logo-avatar-5-br.webp";
 import Image from "next/image";
 import { Terminal } from "../shared/Terminal";
 import TechStack from "../shared/TechStack";
 import { skills } from '@/utils/constants';
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { runActionByScroll } from "@/utils/helpers";
 
 
 export default function AboutMe() {
@@ -16,13 +18,49 @@ export default function AboutMe() {
     from: { opacity: 0 },
   });
 
+    const [percents, setPercents] = useState({
+      react: 0,
+      typeScrpt: 0,
+      next: 0,
+      node: 0
+    });
+
+    const skillSet = [
+      { name: 'React', percent: percents.react, colors: ['#25b7fa', '#1b6a8eff'] },
+      { name: 'Typescript', percent: percents.typeScrpt, colors: ['#17cee6ff', '#0c6971ff'] },
+      { name: 'Next', percent: percents.next, colors: ['#17e678ff', '#146e10ff'] },
+      { name: 'Node', percent: percents.node, colors: ['#a14cecff', '#641b83ff'] },
+    ]
+
+    const imageRef = useRef<HTMLDivElement | null>(null)
+    const textAboutRef = useRef<HTMLDivElement | null>(null)
+
+    useEffect(() => {
+      runActionByScroll(900, () => {
+         setPercents({
+          react: 90,
+          typeScrpt: 90,
+          next: 90,
+          node: 80
+        })
+      })
+
+      runActionByScroll(200, () => {
+        imageRef.current?.classList.add('animate__fadeInUp', 'show-element');
+        textAboutRef.current?.classList.add('animate__fadeInRight', 'show-element');
+
+        imageRef.current?.classList.remove('hidde-element');
+        textAboutRef.current?.classList.remove('hidde-element');
+      })
+    }, [])
+
   return (
     <animated.div id="about" style={fade_animation}>
       <div className="container">
-        <div className="row justify-content-center mt-5 mt-lg-0 pt-5">
+        <div className="row justify-content-center align-items-center mt-5 mt-lg-0 pt-5">
 
           <div className="col-10 col-lg-5">
-            <div className="avatar-efect animate__animated">
+            <div className="avatar-efect animate__animated hidde-element" ref={imageRef}>
                <Image
                   className="about-img"
                   src={profile}
@@ -46,7 +84,7 @@ export default function AboutMe() {
           </div>
 
 
-          <div className="col-11 col-lg-6 animate__animated mt-md-5">
+          <div className="col-11 col-lg-6 animate__animated mt-md-5 hidde-element" ref={textAboutRef}>
             <div className="py-2 py-md-0"></div>
             <h2 className="theme_title mt-5 mt-md-0 text-center text-md-left">
               Sobre mi
@@ -66,12 +104,33 @@ export default function AboutMe() {
         </div>
       </div>
 
-        <div className="row justify-content-center mt-md-5">
+        <div className="row justify-content-center align-items-center mt-md-5">
           <div className="col-11 col-md-8">
               <div className="py-1 py-md-2"></div>
               <div className="mt-5 skills">
                 <h2 className="theme_title text-center text-md-left">Habilidades</h2>
-                <ul className="mt-3">
+                <div className="d-flex flex-wrap justify-content-center pt-5">
+                  {
+                    skillSet.map(skill => (
+                    <div key={skill.name} style={{ margin: '1rem' }}>
+                      <CircularProgress 
+                        size='sm' 
+                        initialValue={skill.percent} 
+                        
+                        progressColors={
+                          [
+                            skill.colors[0], 
+                            skill.colors[1]
+                          ]
+                        }>
+                        <CircularProgress.Circle enableTransition />
+                        <CircularProgress.Label text={skill.name} />
+                      </CircularProgress>
+                    </div>
+                    ))
+                  }
+                </div>
+                {/* <ul className="mt-3">
                   <li className="theme_text mb-2 mb-md-1">Desarrollo de interfaces de usuario responsivas con React, Typescript, Vite, Next y Vue</li>
                   <li className="theme_text mb-2 mb-md-1">Desarrollo de sistemas de diseño con React, Emotion, Tailwind, Vite, Storybook y Npm</li>
                   <li className="theme_text mb-2 mb-md-1">Creacion librerias de componentes con diferentes formatos: ESM, CJS, UMD...</li>
@@ -81,12 +140,12 @@ export default function AboutMe() {
                   <li className="theme_text mb-2 mb-md-1">Desarrollo de API&apos;S serverless con AWS y Serverless Framework</li>
                   <li className="theme_text mb-2 mb-md-1">Implementación de ambientes de desarrollo con AWS Amplify</li>
                   <li className="theme_text mb-2 mb-md-1">Configuración de Pipelines de CI/CD con GitHub Actions</li>
-                </ul>
+                </ul> */}
               </div>
           </div>
         </div>
 
-        <div className="py-md-5 py-2"></div>
+        <div className="py-md-2 py-2"></div>
         <div className="row justify-content-center">
           <div className="col-10 col-md-8 mt-5">
             <h2 className="theme_title text-center text-md-left">Pila Tecnológica</h2>

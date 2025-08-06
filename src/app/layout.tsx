@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import '../scss/main.scss';
 import { ThemeProvider } from "@/context/ThemeContext";
+import { ThemeProvider as TropixUiThemeProvider } from 'tropix-ui'
 import { GlobalStateProvider } from "@/context/GlobalStateContext";
 //import Head from "next/head";
 
@@ -45,9 +46,11 @@ export default function RootLayout({
       </Head> */}
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>
-          <GlobalStateProvider>
-             {children}
-          </GlobalStateProvider>
+          <TropixUiThemeProvider>
+            <GlobalStateProvider>
+              {children}
+            </GlobalStateProvider>
+          </TropixUiThemeProvider>
         </ThemeProvider>
       </body>
     </html>
