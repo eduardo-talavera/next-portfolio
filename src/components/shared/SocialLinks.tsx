@@ -1,6 +1,7 @@
 'use client';
 
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaLinkedinIn  } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 
 export default function SocialLinks({ mini = false }) {
   return (
@@ -12,10 +13,10 @@ export default function SocialLinks({ mini = false }) {
           target="blank"
           data-toggle="tooltip"
           data-placement="bottom"
-          title="mi twitter"
+          title="X"
         >
           <i className="fab fa-twitter"></i>
-          <FaTwitter size={25} />
+          <BsTwitterX size={25} />
         </a>
       </li>
       <li className="list-inline-item">
@@ -25,9 +26,9 @@ export default function SocialLinks({ mini = false }) {
           target="_blank"
           data-toggle="tooltip"
           data-placement="bottom"
-          title="mi linkedin"
+          title="Linkedin"
         >
-        <FaLinkedin size={25} />
+        <FaLinkedinIn  size={25} />
         </a>
       </li>
       <li className="list-inline-item">
@@ -35,7 +36,7 @@ export default function SocialLinks({ mini = false }) {
           href="https://github.com/eduardo-talavera"
           data-toggle="tooltip"
           data-placement="bottom"
-          title="mi github"
+          title="GitHub"
           rel="noreferrer"
           target="_blank"
         >

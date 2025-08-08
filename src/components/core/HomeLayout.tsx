@@ -89,35 +89,9 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
           />
         </>
       }
-{/* 
-      <Image
-        src="/city-day.webp"
-        alt="background preload light"
-        width={0}
-        height={0}
-        priority
-        style={{ display: 'none' }}
-      />
-      
-      <Image
-        src="/city-night-2.webp"
-        alt="background preload light"
-        width={0}
-        height={0}
-        priority
-        style={{ display: 'none' }}
-      /> */}
 
       <div 
         id="hero"
-        // style={{
-        //   backgroundImage: theme === 'light' ? 'url("/city-day.webp")' : 'url("/city-night-2.webp")',
-        //   backgroundSize: 'cover',
-        //   width: '100vw',
-        //   backgroundRepeat: 'no-repeat',
-        //   backgroundPosition: 'center center',
-        //   minHeight: '90vh'
-        // }}
       >
         <div id="capa">
           <div className="d-md-none">
