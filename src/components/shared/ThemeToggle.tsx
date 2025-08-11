@@ -34,15 +34,15 @@ export const ThemeToggle = ({ className, text = false, ...props }: ThemeTogglePr
             </span>
             {
                 theme === 'light' 
-                  ? <FaMoon size={25} /> 
-                  : <FaSun size={25} />
+                  ? <FaSun size={25} /> 
+                  : <FaMoon size={25} />
             }
         </div>
       </> : <>
             {
               theme === 'light' 
-                ? <FaMoon onClick={handleClick} size={25} /> 
-                : <FaSun onClick={handleClick} size={25} />
+                ? <FaSun onClick={handleClick} size={25} /> 
+                : <FaMoon onClick={handleClick} size={25} />
             }
       </>
      }

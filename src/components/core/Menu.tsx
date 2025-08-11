@@ -33,9 +33,6 @@ const Menu = () => (
           Portafolio
         </a>
       </li>
-      <li>
-        <ThemeToggle text />
-      </li>
     </ul>
   </div>
 );
