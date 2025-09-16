@@ -3,7 +3,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { CircularProgress } from 'tropix-ui';
-import profile from "@/static/img/logo-avatar-5-br.webp";
+//import profile from "@/static/img/logo-avatar-5-br.webp";
+import profile from '@/static/img/profile.webp'
+import lego from '@/static/img/logo-avatar-5-br.webp'
 import Image from "next/image";
 import { Terminal } from "../shared/Terminal";
 import TechStack from "../shared/TechStack";
@@ -62,7 +64,7 @@ export default function AboutMe() {
         <div className="row justify-content-center align-items-center mt-5 mt-lg-0 pt-5">
 
           <div className="col-10 col-lg-5">
-            <div className="avatar-efect animate__animated hidde-element" ref={imageRef}>
+            {/* <div className="avatar-efect animate__animated hidde-element" ref={imageRef}>
                <Image
                   className="about-img"
                   src={profile}
@@ -82,6 +84,19 @@ export default function AboutMe() {
                 priority
                 style={{ height: 'auto' }}
               />
+            </div> */}
+            <div className="avatar-efect animate__animated hidde-element" ref={imageRef}>
+              <div className="blob">
+                 <Image
+                  className="about-img"
+                  src={profile}
+                  alt="profile img"
+                  width={250}
+                  height={250}
+                  priority
+                  style={{ height: 'auto' }}
+                />
+              </div>
             </div>
           </div>
 
@@ -94,7 +109,7 @@ export default function AboutMe() {
 
            <div className="text-center text-md-left mb-4 mb-md-0">
               <p className="mt-3 theme_text paragraph_text">
-                Soy un <strong>desarrollador web</strong> con más de 4 años de experiencia creando soluciones escalables y modernas con
+                Soy un <strong>Desarrollador Web</strong> con más de 4 años de experiencia creando soluciones escalables y modernas con
                 React, Next.js, Vue, TypeScript y Node.js. Me especializo en diseño de sistemas reutilizables,
                 automatización con CI/CD, y despliegues en la nube (AWS). Enfocado en eficiencia, calidad de código y
                 liderazgo técnico.
@@ -156,6 +171,14 @@ export default function AboutMe() {
         </div>
 
       
+       <div className="terminal-container">
+        <Image
+          className="about-img lego"
+          src={lego}
+          alt="lego img"
+          width={200}
+          height={200}
+        />
         <Terminal className="mt-3">
           <div className="body__item d-none d-md-block">
             <span className="body__item_title">$ contact --email</span>
@@ -199,6 +222,8 @@ export default function AboutMe() {
               </div>
           </div>  
         </Terminal>
+       </div>
+
       </div>
     </animated.div>
   );
