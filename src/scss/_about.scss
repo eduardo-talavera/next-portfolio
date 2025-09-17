@@ -38,11 +38,11 @@
 
       .about-img {
         position: relative;
-        width: 300px;
+        width: 430px;
         z-index: 2;
-        filter: drop-shadow(10px 10px 7px white);
-        bottom: -50px;
-        left: 50px;
+        filter: drop-shadow(2px 4px 6px white);
+        top: -55px;
+        left: 60px;
       }
     }
 
@@ -80,8 +80,10 @@
       .blob {
         width: 400px;
         height: 300px;
+
         .about-img{
-          width: 250px;
+          width: 400px;
+          left: 40px;
         }
       }
 

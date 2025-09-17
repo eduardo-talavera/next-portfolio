@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { CircularProgress } from 'tropix-ui';
 //import profile from "@/static/img/logo-avatar-5-br.webp";
-import profile from '@/static/img/profile.webp'
+import profile from '@/static/img/profile-gray-scale-2.webp'
 import lego from '@/static/img/logo-avatar-5-br.webp'
 import Image from "next/image";
 import { Terminal } from "../shared/Terminal";
@@ -62,37 +62,15 @@ export default function AboutMe() {
     <animated.div id="about" style={fade_animation}>
       <div className="container">
         <div className="row justify-content-center align-items-center mt-5 mt-lg-0 pt-5">
-
           <div className="col-10 col-lg-5">
-            {/* <div className="avatar-efect animate__animated hidde-element" ref={imageRef}>
-               <Image
-                  className="about-img"
-                  src={profile}
-                  alt="profile img"
-                  width={400}
-                  height={400}
-                  priority
-                  style={{ height: 'auto' }}
-              />
-
-              <Image
-                className="blob-img"
-                src='/blob.webp'
-                alt="profile img"
-                width={500}
-                height={500}
-                priority
-                style={{ height: 'auto' }}
-              />
-            </div> */}
             <div className="avatar-efect animate__animated hidde-element" ref={imageRef}>
               <div className="blob">
-                 <Image
+                <Image
                   className="about-img"
                   src={profile}
                   alt="profile img"
-                  width={250}
-                  height={250}
+                  width={300}
+                  height={300}
                   priority
                   style={{ height: 'auto' }}
                 />
