@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { CircularProgress } from 'tropix-ui';
-//import profile from "@/static/img/logo-avatar-5-br.webp";
 import profile from '@/static/img/profile-gray-scale-2.webp'
 import lego from '@/static/img/logo-avatar-5-br.webp'
 import Image from "next/image";
@@ -167,14 +166,6 @@ export default function AboutMe() {
           </div>
 
           <div className="body__item">
-            <span className="body__item_title">$ contact --phone</span>
-            <div className="d-flex align-items-center justify-content-between">
-              <span className="body__item_info_box">+52 33 1883 1774</span>
-              <span className="body__item_time d-none d-sm-block">99ms</span>
-            </div>
-          </div>
-
-          <div className="body__item">
             <span className="body__item_title">$ cat resume.pdf</span>
             <div className="d-flex align-items-center justify-content-between">
               <a 
@@ -189,12 +180,12 @@ export default function AboutMe() {
             </div>
           </div>
 
-          <div className="body__item d-none d-sm-block">
+          <div className="body__item">
               <span className="body__item_title">$ location --current</span>
               <div className="d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center">
                   <FaMapMarkerAlt className="icon_location" />
-                  <span className="body__item_location">Michoacán México</span>
+                  <span className="body__item_location">México</span>
                 </div>
                 <span className="body__item_time d-none d-sm-block">79ms</span>
               </div>

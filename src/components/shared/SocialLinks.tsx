@@ -1,11 +1,11 @@
 'use client';
 
-import { FaGithub, FaLinkedin, FaLinkedinIn  } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn  } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 
 export default function SocialLinks({ mini = false }) {
   return (
-    <ul className={mini ? 'social-mini list-inline' : 'social list-inline'}>
+    <ul className={mini ? 'social-mini' : 'social'} style={{ paddingLeft: 0 }}>
       <li className="list-inline-item">
         <a
           href="https://twitter.com/ed_talavera"

@@ -152,50 +152,14 @@ h2 {
   text-align: center;
   margin: 3px;
 
-  &:hover {
-    // background: #616c77;
-    transform: translateY(-5px);
-    border: none;
-    transition: all .25s ease-in-out;
-  }
-
   svg {
     font-size: 20px;
     margin-top: 8px;
   }
 }
 
-.social li:nth-child(1) a{
-  &:hover{
-    background: deepskyblue;
-    color: white;
-  }
-}
-
-.social li:nth-child(2) a{
-  &:hover{
-    background: #0073b1;
-    color:white;
-  }
-}
-
-.social li:nth-child(3) a{
-  &:hover{
-    background: #ba1bc9;
-    color:white;
-  }
-}
-
-
 a {
-  color: #3AAA64;
   text-decoration: none!important;
-
-  &:hover {
-    text-decoration: underline;
-    color: #5f6b77;
-    color: #2d844e;
-  }
 
   &:focus {
     text-decoration: none;
@@ -203,10 +167,10 @@ a {
 }
 
 .social-mini li {
- 
+  
   &:hover {
     background-color: #25b7fa;
-    transition: .25s ease-in-out;
+    transition: color ease .05s;
   }
 
 a {
