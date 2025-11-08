@@ -41,18 +41,20 @@ function Modal({ project, onClickOutside }: ModalProps) {
               !hiddeSkeleton &&  <ModalSkeleton />
             }
           
-         
             <h3 className="theme_title">{ project.title }</h3>
-            <p className="theme_text mt-2">{ project.info }</p>
-            <h5 className="theme_title">Tegnologias usadas:</h5>
-            <TechStack skills={project.stack} imgSize={30} align="start" />
-            <ul style={{ paddingLeft: '1rem' }} className="mt-3">
-            {
-              project.functionalities.map(item => 
-                <li key={item} className="theme_text">{ item }</li>
-              )
-            }
-            </ul>
+            
+            <div className="modal_scrollable_section">
+              <p className="theme_text mt-2">{ project.info }</p>
+              <h5 className="theme_title">Tegnologias usadas:</h5>
+              <TechStack skills={project.stack} imgSize={30} align="start" />
+              <ul style={{ paddingLeft: '1rem' }} className="mt-3">
+              {
+                project.functionalities.map(item => 
+                  <li key={item} className="theme_text">{ item }</li>
+                )
+              }
+              </ul>
+            </div>
 
             <div className="actions d-flex flex-wrap">
                 <a 

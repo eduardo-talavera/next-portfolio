@@ -1,4 +1,5 @@
-import tropixUiThumbnail from '../static/img/tropix-ui-thubnail.webp'
+import tropixUiThumbnail from '../static/img/tropix-ui-thubnail.webp';
+import ticketsApp from '../static/img/tickets-app.webp';
 import ipTracker from '../static/img/ip-tracker.webp';
 import twitterClone from '../static/img/twitter-clone.webp';
 import { StaticImageData } from 'next/image';
@@ -53,8 +54,26 @@ export type Project = {
   ]
 
 export const projects: Project[] = [
-    {
+  {
     id: 1,
+    imageSrc: ticketsApp,
+    sourceCodeSrc: 'https://github.com/eduardo-talavera/issues-app-frontend',
+    liveDemoSrc: "https://tickets-app-by-eduardo-talavera.vercel.app",
+    info: 'Una aplicación de gestión de tickets e incidencias para equipos de desarrollo, construida con una arquitectura de frontend y backend desacoplados utilizando React en el frontend y Node.js con Express en el backend. Puede probar la aplicacion con las siguientes credenciales... correo: usuario.prueba_a@mail.com, contraseña: password123.',
+    title: "Tickets App",
+    stack: ['react', 'typescript', 'vite', 'vitest', 'tailwind', 'nodejs', 'mongodb', 'express', 'docker'],
+    functionalities: [
+      'Pruebas unitarias automatizadas', 
+      'Autenticación segura mediante JWT cookies only y refreshTokens',
+      'Diseño responsivo adaptado a multiples dispositivos',
+      'Actualización de estado mediante eventos drag and drop',
+      'Gestion de estado y peticiones al servidor con TanStack Query',
+      'Validación de formularios con react-hook-form',
+    ],
+    haveDocs: false
+  },
+  {
+    id: 2,
     imageSrc: tropixUiThumbnail,
     sourceCodeSrc: 'https://github.com/eduardo-talavera/tropix-ui',
     liveDemoSrc: "https://tropix-ui-docs.vercel.app/",
@@ -72,7 +91,7 @@ export const projects: Project[] = [
     haveDocs: true
   },
   {
-    id: 2,
+    id: 3,
     imageSrc: twitterClone,
     sourceCodeSrc: 'https://github.com/eduardo-talavera/twitter-clone',
     liveDemoSrc: "https://twitter-clone-3e2df.web.app/",
@@ -90,7 +109,7 @@ export const projects: Project[] = [
     haveDocs: false
   },
   {
-    id: 3,
+    id: 4,
     imageSrc: ipTracker,
     sourceCodeSrc: 'https://github.com/eduardo-talavera/ip-tracker',
     liveDemoSrc: "https://ip-tracker64.netlify.app/",

@@ -29,6 +29,11 @@
       border-radius: 1rem;
       position: relative;
 
+      .modal_scrollable_section {
+        overflow-y: auto;
+        max-height: 80%;
+      }
+
       .modal_close_icon {
         position: absolute;
         top: 1rem;
@@ -63,8 +68,8 @@
 
 
       @media screen and (width >= 1000px) {
-        width: 50vw;
-        height: 500px;
+        width: 60vw;
+        height: 600px;
       }
     }
   }
