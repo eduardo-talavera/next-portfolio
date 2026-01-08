@@ -27,8 +27,8 @@
 
     .blob {
       position: relative;
-      width: 450px;
-      height: 350px;
+      width: 550px;
+      height: 450px;
       background: linear-gradient(70deg, #16ceb5, #159de9);
       //border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
       overflow: hidden;
@@ -38,11 +38,11 @@
 
       .about-img {
         position: relative;
-        width: 430px;
+        width: 630px;
         z-index: 2;
-        filter: drop-shadow(2px 4px 6px white);
-        top: -55px;
-        left: 60px;
+        //filter: drop-shadow(2px 4px 6px white);
+        top: -20px;
+        left: -40px;
       }
     }
 
@@ -83,7 +83,7 @@
 
         .about-img{
           width: 400px;
-          left: 40px;
+          left: 5px;
         }
       }
 
