@@ -107,15 +107,16 @@ export default function AboutMe() {
 
             <div className="text-center text-md-left mb-4 mb-md-0">
               <p className="mt-3 theme_text paragraph_text">
-                Soy un <strong>Desarrollador Frontend Sr </strong>con más de 5
-                años de experiencia construyendo interfaces modernas,
-                optimizadas y escalables utilizando React + 18, Typescript,
-                Redux Toolkit, y Next.js. Me especializo en crear sistemas de
-                diseño reutilizables, arquitecturas mantenibles y flujos de
-                desarrollo eficientes. Tengo experiencia integrando CI/CD,
-                trabajando con Node.js para funcionalidades del lado del
-                servidor y realizando despliegues en la nube (principalmente
-                AWS). Me caracterizo por un enfoque en la calidad del código, el
+                Soy un <strong>Desarrollador Frontend </strong>
+                con más de 5 años de experiencia construyendo
+                interfaces modernas, optimizadas y escalables utilizando React,
+                Typescript, Tailwind CSS, Next, Vercel y AWS. Me especializo en
+                crear sistemas de diseño reutilizables, arquitecturas
+                mantenibles y flujos de desarrollo eficientes. Tengo experiencia
+                integrando CI/CD con Github Actions, trabajando con Node.js,
+                Express, GraphQL y Web Sockets para funcionalidades del lado del
+                servidor, y realizando despliegues en la nube en Vercel y AWS.
+                Me caracterizo por un enfoque en la calidad del código, el
                 rendimiento y la toma de decisiones técnicas que impulsan
                 productos confiables y de alto impacto.
               </p>
@@ -144,17 +145,6 @@ export default function AboutMe() {
                   </div>
                 ))}
               </div>
-              {/* <ul className="mt-3">
-                  <li className="theme_text mb-2 mb-md-1">Desarrollo de interfaces de usuario responsivas con React, Typescript, Vite, Next y Vue</li>
-                  <li className="theme_text mb-2 mb-md-1">Desarrollo de sistemas de diseño con React, Emotion, Tailwind, Vite, Storybook y Npm</li>
-                  <li className="theme_text mb-2 mb-md-1">Creacion librerias de componentes con diferentes formatos: ESM, CJS, UMD...</li>
-                  <li className="theme_text mb-2 mb-md-1">Implementación de arquitecturas de software escalables</li>
-                  <li className="theme_text mb-2 mb-md-1">Automatización de pruebas unitarias con Vitest y Testing Library</li>
-                  <li className="theme_text mb-2 mb-md-1">Construcción de API&apos;S REST y GraphQL con Node y Express</li>
-                  <li className="theme_text mb-2 mb-md-1">Desarrollo de API&apos;S serverless con AWS y Serverless Framework</li>
-                  <li className="theme_text mb-2 mb-md-1">Implementación de ambientes de desarrollo con AWS Amplify</li>
-                  <li className="theme_text mb-2 mb-md-1">Configuración de Pipelines de CI/CD con GitHub Actions</li>
-                </ul> */}
             </div>
           </div>
         </div>
