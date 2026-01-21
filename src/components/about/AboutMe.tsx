@@ -115,7 +115,7 @@ export default function AboutMe() {
                 mantenibles y flujos de desarrollo eficientes. Tengo experiencia
                 integrando CI/CD con Github Actions, trabajando con Node.js,
                 Express, GraphQL y Web Sockets para funcionalidades del lado del
-                servidor, y realizando despliegues en la nube en Vercel y AWS.
+                servidor y realizando despliegues en la nube en Vercel y AWS.
                 Me caracterizo por un enfoque en la calidad del código, el
                 rendimiento y la toma de decisiones técnicas que impulsan
                 productos confiables y de alto impacto.
