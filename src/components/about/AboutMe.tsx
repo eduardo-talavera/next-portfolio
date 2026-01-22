@@ -107,18 +107,17 @@ export default function AboutMe() {
 
             <div className="text-center text-md-left mb-4 mb-md-0">
               <p className="mt-3 theme_text paragraph_text">
-                Soy un <strong>Desarrollador Frontend </strong>
-                con más de 5 años de experiencia construyendo
-                interfaces modernas, optimizadas y escalables utilizando React,
-                Typescript, Tailwind CSS, Next, Vercel y AWS. Me especializo en
-                crear sistemas de diseño reutilizables, arquitecturas
-                mantenibles y flujos de desarrollo eficientes. Tengo experiencia
-                integrando CI/CD con Github Actions, trabajando con Node.js,
-                Express, GraphQL y Web Sockets para funcionalidades del lado del
-                servidor y realizando despliegues en la nube en Vercel y AWS.
-                Me caracterizo por un enfoque en la calidad del código, el
-                rendimiento y la toma de decisiones técnicas que impulsan
-                productos confiables y de alto impacto.
+                Soy un <strong>Desarrollador Fullstack </strong>
+                con más de <strong>5 años de experiencia</strong> en la
+                construcción de aplicaciones web escalables utilizando <strong>React,
+                TypeScript y Node.js.</strong> Experiencia en el diseño y desarrollo de
+                <strong>APIs REST y GraphQL</strong>, autenticación de usuarios, manejo de bases
+                de datos relacionales y no relacionales, así como en la
+                implementación de <strong>CI/CD y despliegues en la nube (AWS y Vercel)</strong>.
+                <br /><br />
+                He participado en proyectos <strong>fintech y ecommerce</strong>, enfocado en
+                calidad de código, rendimiento, seguridad y toma de decisiones
+                técnicas orientadas al negocio.
               </p>
             </div>
           </div>
@@ -186,7 +185,7 @@ export default function AboutMe() {
               <span className="body__item_title">$ cat resume.pdf</span>
               <div className="d-flex align-items-center justify-content-between">
                 <a
-                  href="/pdf/CV_Edgar_Eduardo_Talavera_Desarrollador_Frontend.pdf"
+                  href="/pdf/CV_Edgar_Eduardo_Talavera_Desarrollador_Full_Stack.pdf"
                   className="body__item_info_box"
                   target="_blank"
                   rel="noopener noreferrer"
