@@ -110,8 +110,8 @@ export default function AboutMe() {
                 Soy un <strong>Desarrollador Fullstack </strong>
                 con más de <strong>5 años de experiencia</strong> en la
                 construcción de aplicaciones web escalables utilizando <strong>React,
-                TypeScript y Node.js.</strong> Experiencia en el diseño y desarrollo de
-                <strong>APIs REST y GraphQL</strong>, autenticación de usuarios, manejo de bases
+                TypeScript y Node.js.</strong>Cuento con experiencia en el diseño y desarrollo de
+                <strong> APIs REST y GraphQL</strong>, autenticación de usuarios, manejo de bases
                 de datos relacionales y no relacionales, así como en la
                 implementación de <strong>CI/CD y despliegues en la nube (AWS y Vercel)</strong>.
                 <br /><br />
