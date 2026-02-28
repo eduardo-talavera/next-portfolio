@@ -22,7 +22,7 @@ export default function AboutMe() {
   const [percents, setPercents] = useState({
     react: 0,
     typeScrpt: 0,
-    next: 0,
+    vue: 0,
     node: 0,
   });
 
@@ -38,8 +38,8 @@ export default function AboutMe() {
       colors: ["#17cee6ff", "#0c6971ff"],
     },
     {
-      name: "Next",
-      percent: percents.next,
+      name: "Vue",
+      percent: percents.vue,
       colors: ["#17e678ff", "#146e10ff"],
     },
     {
@@ -57,7 +57,7 @@ export default function AboutMe() {
       setPercents({
         react: 90,
         typeScrpt: 90,
-        next: 90,
+        vue: 80,
         node: 80,
       });
     });
@@ -107,15 +107,15 @@ export default function AboutMe() {
 
             <div className="text-center text-md-left mb-4 mb-md-0">
               <p className="mt-3 theme_text paragraph_text">
-                Soy un <strong>Desarrollador Fullstack </strong>
+                Soy un <strong>Desarrollador </strong>
                 con más de <strong>5 años de experiencia</strong> en la
-                construcción de aplicaciones web escalables utilizando <strong>React,
-                TypeScript y Node.js.</strong> Experiencia en el diseño y desarrollo de
-                <strong>APIs REST y GraphQL</strong>, autenticación de usuarios, manejo de bases
+                construcción de aplicaciones web escalables utilizando <strong>React, Vue, 
+                TypeScript y Node.js.</strong> Tengo experiencia en el diseño y desarrollo de
+                <strong> APIs REST y GraphQL</strong>, autenticación de usuarios, manejo de bases
                 de datos relacionales y no relacionales, así como en la
                 implementación de <strong>CI/CD y despliegues en la nube (AWS y Vercel)</strong>.
                 <br /><br />
-                He participado en proyectos <strong>fintech y ecommerce</strong>, enfocado en
+                He participado en proyectos <strong>fintech, educativos y ecommerce</strong>, enfocado en
                 calidad de código, rendimiento, seguridad y toma de decisiones
                 técnicas orientadas al negocio.
               </p>
