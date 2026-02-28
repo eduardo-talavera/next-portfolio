@@ -182,16 +182,11 @@ export default function AboutMe() {
             </div>
 
             <div className="body__item">
-              <span className="body__item_title">$ cat resume.pdf</span>
+              <span className="body__item_title">$ display roles</span>
               <div className="d-flex align-items-center justify-content-between">
-                <a
-                  href="/pdf/CV_Edgar_Eduardo_Talavera_Desarrollador_Full_Stack.pdf"
-                  className="body__item_info_box"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Descargar CV
-                </a>
+                <span className="body__item_info_box">
+                  Frontend Developer, Backend Developer, Fullstack Developer
+                </span>
                 <span className="body__item_time d-none d-sm-block">185ms</span>
               </div>
             </div>
