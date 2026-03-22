@@ -2,7 +2,7 @@
 
 import { useTheme } from '@/context/ThemeContext';
 import { HTMLAttributes } from 'react';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import { LuMoon, LuSun } from 'react-icons/lu';
 import { useThemeMode } from 'tropix-ui';
 
 export interface ThemeToggleProps extends HTMLAttributes<HTMLDivElement>{
@@ -34,15 +34,15 @@ export const ThemeToggle = ({ className, text = false, ...props }: ThemeTogglePr
             </span>
             {
                 theme === 'light' 
-                  ? <FaSun size={25} /> 
-                  : <FaMoon size={25} />
+                  ? <LuSun size={25} /> 
+                  : <LuMoon size={25} />
             }
         </div>
       </> : <>
             {
               theme === 'light' 
-                ? <FaSun onClick={handleClick} size={25} /> 
-                : <FaMoon onClick={handleClick} size={25} />
+                ? <LuSun onClick={handleClick} size={25} /> 
+                : <LuMoon onClick={handleClick} size={25} />
             }
       </>
      }

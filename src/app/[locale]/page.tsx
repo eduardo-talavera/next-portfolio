@@ -1,7 +1,8 @@
 
 import HomeLayout from "@/components/core/HomeLayout";
 import AboutMe from "@/components/about/AboutMe";
-import Portfolio from "@/components/portfolio/Portfolio";
+//import Portfolio from "@/components/portfolio/Portfolio";
+import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
           </section>
           <section style={{ position: 'relative' }}>
             <div className="wave"></div>
-            <Portfolio />
+            <PortfolioGrid />
           </section>
         </HomeLayout>
      </main>

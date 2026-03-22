@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { CircularProgress } from "tropix-ui";
 //import profile from "@/static/img/profile-gray-scale-2.webp";
-import profile from "@/static/img/logo-avatar-5-br.webp";
+import profile from "@/static/img/avatar-3.webp";
 import lego from "@/static/img/logo-avatar-5-br.webp";
 import Image from "next/image";
 import { Terminal } from "../shared/Terminal";
@@ -12,8 +12,11 @@ import TechStack from "../shared/TechStack";
 import { skills } from "@/utils/constants";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { runActionByScroll } from "@/utils/helpers";
+import {useTranslations} from 'next-intl';
 
 export default function AboutMe() {
+  const t = useTranslations("about");
+
   const fade_animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
@@ -102,15 +105,15 @@ export default function AboutMe() {
           >
             <div className="py-2 py-md-0"></div>
             <h2 className="theme_title mt-5 mt-md-0 text-center text-md-left">
-              Sobre mi
+              { t("title") }
             </h2>
 
             <div className="text-center text-md-left mb-4 mb-md-0">
               <p className="mt-3 theme_text paragraph_text">
                 Soy un <strong>Desarrollador </strong>
-                con más de <strong>5 años de experiencia</strong> en la
+                con <strong>experiencia solida</strong> en la
                 construcción de aplicaciones web escalables utilizando <strong>React, Vue, 
-                TypeScript y Node.js.</strong> Tengo experiencia en el diseño y desarrollo de
+                TypeScript y Node.js.</strong> Tengo habilidades en el diseño y desarrollo de
                 <strong> APIs REST y GraphQL</strong>, autenticación de usuarios, manejo de bases
                 de datos relacionales y no relacionales, así como en la
                 implementación de <strong>CI/CD y despliegues en la nube (AWS y Vercel)</strong>.

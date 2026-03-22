@@ -5,7 +5,7 @@
   justify-content: center;
   position: relative;
 
-  background: var(--background);
+  background: var(--secondaryTheme);
   width: 100vw;
 
   p {
@@ -38,11 +38,11 @@
 
       .about-img {
         position: relative;
-        width: 630px;
+        width: 300px;
         z-index: 2;
         //filter: drop-shadow(2px 4px 6px white);
         top: -20px;
-        left: -40px;
+        left: 100px;
       }
     }
 
@@ -82,8 +82,8 @@
         height: 300px;
 
         .about-img{
-          width: 400px;
-          left: 5px;
+          width: 200px;
+          left: 100px;
         }
       }
 
@@ -128,7 +128,7 @@
     right: 0;
     z-index: 1;
     mask: url(../static/img/wave-hero-sm.svg);
-    background-color: var(--background);
+    background-color: var(--secondaryTheme);
     mask-repeat: no-repeat;
     mask-position: bottom;
 

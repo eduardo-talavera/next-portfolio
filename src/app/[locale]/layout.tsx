@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import '../scss/main.scss';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import '../../scss/main.scss';
 import { ThemeProvider } from "@/context/ThemeContext";
 import { GlobalStateProvider } from "@/context/GlobalStateContext";
 import { TropixUiProvider } from "@/context/TropixUiProvider";
@@ -25,30 +27,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  params: {locale: string};
 }>) {
+  const messages = await getMessages({locale: params.locale});
+
   return (
     <html lang="en">
-      {/* <Head>
-         <link
-          rel="preload"
-          as="image"
-          href="/city-day.webp"
-        />
-         <link
-          rel="preload"
-          as="image"
-          href="/city-night-2.webp"
-        />
-      </Head> */}
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>
           <TropixUiProvider>
             <GlobalStateProvider>
-              {children}
+              <NextIntlClientProvider messages={messages}>
+                {children}
+              </NextIntlClientProvider>
             </GlobalStateProvider>
           </TropixUiProvider>
         </ThemeProvider>

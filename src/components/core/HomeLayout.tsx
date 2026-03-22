@@ -14,6 +14,7 @@ import { useTheme } from "@/context/ThemeContext";
 import dynamic from "next/dynamic";
 import { useGlobalState } from "@/context/GlobalStateContext";
 import { Project } from "@/utils/constants";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 const Modal = dynamic(() => import("../portfolio/Modal"));
 
@@ -114,6 +115,7 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
               <div className="d-flex">
                 <MenuDesktop />
                 <ThemeToggle className='ml-5' />
+                <LanguageSwitcher />
               </div>
             </div>
             <ThemeToggle className='d-md-none d-block theme_toggle_mobile' />

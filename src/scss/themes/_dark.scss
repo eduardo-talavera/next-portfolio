@@ -2,12 +2,12 @@
 html.dark {
   --primaryTheme: #1E293B;
   --text: #F3F4F6;
-  --secondaryTheme: #111827;
+  --secondaryTheme: #162034;
   --background: #1E293B;
   --headerBg: #0F172A;
   --info: #0a94d4;
   --avatarBg: #25b7fa;
-  --capaOverlayBg: linear-gradient(130deg, #297daa29, #0a9086c4);
+  --capaOverlayBg: linear-gradient(130deg, rgba(41, 125, 170, .96), rgba(10, 144, 134, .10));
   --animatedCircleBg: rgba(37, 183, 250, .1);
   --socialFooterColor: #232121;
   --socialFooterBg: #ffffff;
@@ -22,4 +22,37 @@ html.dark {
   --terminalBackground: #0D1117;
   --terminalBorder: 1px solid #1f2937;
   --modalAnchor: #111827;
+
+  --background:          #1E293B;
+  --foreground:          #F3F4F6;
+  --card:                #111827;
+  --card-foreground:     #F3F4F6;
+  --primary:             #25b7fa;
+  --primary-foreground:  #1E293B;
+  --secondary:           #1E2A3A;
+  --secondary-foreground:#D1D5DB;
+  --muted:               #1E2A3A;
+  --muted-foreground:    #9CA3AF;
+  --accent:              #5EEAD4;
+  --accent-foreground:   #111827;
+  --border:              #2D3D52;
+  --input:               #2D3D52;
+
+  /* Portfolio-specific */
+  --header-bg:           #0F172A;
+  --theme-title:         #5EEAD4;
+  --info:                #0a94d4;
+  --action-icon:         #25b7fa;
+  --overlay-project:     rgba(0, 0, 0, 0.6);
+  --modal-overlay:       rgba(0, 0, 0, 0.5);
+  --terminal-bg:         #0D1117;
+  --terminal-border:     #1f2937;
+  --terminal-prompt:     #25b7fa;
+  --terminal-output:     #9CA3AF;
+  --social-footer-bg:    #ffffff;
+  --social-footer-color: #232121;
+
+  --shadow-card:         0 0 18px 2px rgba(20, 168, 176, 0.275);
+  --shadow-card-hover:   0 0 28px 6px rgba(20, 168, 176, 0.45);
+  --gradient-overlay:    linear-gradient(to top, rgba(13,17,24,0.95) 0%, rgba(13,17,24,0.4) 50%, transparent 100%);
 }

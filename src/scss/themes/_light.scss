@@ -22,4 +22,38 @@
   --terminalBackground: #ffffff;
   --terminalBorder: 1px solid #b6bcc7;
   --modalAnchor: #F3F4F6;
+  
+  --background:          #FFFFFF;
+  --foreground:          #111827;
+  --card:                #F3F4F6;
+  --card-foreground:     #111827;
+  --primary:             #1e96cd;
+  --primary-foreground:  #FFFFFF;
+  --secondary:           #F3F4F6;
+  --secondary-foreground:#111827;
+  --muted:               #E5E7EB;
+  --muted-foreground:    #6B7280;
+  --accent:              #14B8A6;
+  --accent-foreground:   #FFFFFF;
+  --border:              #D1D5DB;
+  --input:               #D1D5DB;
+  --radius:              0.75rem;
+
+  /* Portfolio-specific */
+  --header-bg:           #ffffff;
+  --theme-title:         #14B8A6;
+  --info:                #0a94d4;
+  --action-icon:         #1e96cd;
+  --overlay-project:     rgba(0, 0, 0, 0.6);
+  --modal-overlay:       rgba(0, 0, 0, 0.3);
+  --terminal-bg:         #ffffff;
+  --terminal-border:     #b6bcc7;
+  --terminal-prompt:     #1e96cd;
+  --terminal-output:     #62666e;
+  --social-footer-bg:    #232121;
+  --social-footer-color: #ffffff;
+
+  --shadow-card:         0 0 18px 2px rgba(0, 0, 0, 0.10);
+  --shadow-card-hover:   0 0 24px 4px rgba(0, 0, 0, 0.18);
+  --gradient-overlay:    linear-gradient(to top, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.30) 50%, transparent 100%);
 }
