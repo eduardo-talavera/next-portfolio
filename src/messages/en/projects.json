@@ -1,0 +1,64 @@
+{
+  "projects": {
+    "title": "Portfolio",
+    "subtitle_1": "Featured",
+    "subtitle_2": "Projects",
+    "featured": "featured",
+    "description": "Here are some of the projects I've worked on. Each project showcases my skills and experience in different areas of software development.",
+    "filters": {
+      "all": "All",
+      "full_stack": "Full Stack",
+      "creative": "Creative",
+      "ui_library": "UI Library"
+    },
+    "tickets_app": {
+      "name": "Tickets App",
+      "description": "A ticket management application that allows users to create, manage, and track support tickets. It includes features such as ticket creation, assignment, status tracking, and reporting.",
+      "functionalities": {
+        "a": "Automated unit testing",
+        "b": "Secure authentication using JWT cookies only and refreshTokens",
+        "c": "Responsive design adapted to multiple devices",
+        "d": "Status update through drag and drop events",
+        "e": "Implementation of filters for better organization of tickets",
+        "f": "Form validation with react-hook-form"
+      }
+    },
+    "tropix_ui": {
+      "name": "Tropix UI",
+      "description": "A design system and component library built with React and TypeScript. It provides a set of reusable UI components, such as buttons, forms, modals, and navigation elements, that can be easily integrated into web applications.",
+      "functionalities": {
+        "a": "Design of reusable and customizable components",
+        "b": "Clear and detailed documentation for each component",
+        "c": "Implementation of unit tests to ensure code quality",
+        "d": "Performance optimization through techniques like lazy loading and memoization",
+        "e": "Support for custom themes and accessibility",
+        "f": "CI/CD integration with GitHub Actions and Semantic Release"
+      }
+    },
+    "twitter_clone": {
+      "name": "Twitter Clone",
+      "description": "A social media platform that mimics the core features of Twitter, including user authentication, posting tweets, and real-time updates. It is built using React for the frontend and Firebase for the backend.",
+      "functionalities": {
+        "a": "User authentication with Firebase Authentication",
+        "b": "Real-time posting and viewing of tweets using Firestore",
+        "c": "Responsive design for optimal experience on mobile and desktop devices"
+      }
+    },
+    "ip_tracker": {
+      "name": "IP Tracker",
+      "description": "A web application that allows users to track the location and details of an IP address. It uses a third-party API to fetch geolocation data and displays it on an interactive map.",
+      "functionalities": {
+        "a": "Integration with a geolocation API to fetch accurate location data",
+        "b": "Visualization of the location on an interactive map using Leaflet",
+        "c": "Responsive design for optimal experience on mobile and desktop devices"
+      }
+    },
+    "modal": {
+      "subtitle": "Technologies used",
+      "functionalities_title": "Functionalities and implementations",
+      "live_button": "View live",
+      "code_button": "View code",
+      "docs_button": "View documentation"
+    }
+  }
+}

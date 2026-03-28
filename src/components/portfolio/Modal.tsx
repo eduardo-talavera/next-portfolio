@@ -5,9 +5,11 @@ import { Project } from "@/utils/constants";
 import { useOutsideAlerter } from "@/hooks/useOutsideAlerter";
 import { FaRegWindowClose } from "react-icons/fa";
 import { useGlobalState } from "@/context/GlobalStateContext";
-import TechStack from "../shared/TechStack";
 import { ModalSkeleton } from "./ModalSkeleton";
 import { FaGithub, FaGlobe } from "react-icons/fa";
+
+import "./modal.scss";
+import { useTranslations } from "next-intl";
 
 export interface ModalProps {
   project: Project;
@@ -19,6 +21,7 @@ function Modal({ project, onClickOutside }: ModalProps) {
 
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const { closeProject } = useGlobalState()
+  const t = useTranslations("projects");
  
   useOutsideAlerter(wrapperRef, () => onClickOutside());
 
@@ -44,35 +47,43 @@ function Modal({ project, onClickOutside }: ModalProps) {
             <h3 className="theme_title">{ project.title }</h3>
             
             <div className="modal_scrollable_section">
-              <p className="theme_text mt-2">{ project.info }</p>
-              <h5 className="theme_title">Tegnologias usadas:</h5>
-              <TechStack skills={project.stack} imgSize={30} align="start" />
-              <ul style={{ paddingLeft: '1rem' }} className="mt-3">
+              <p className="theme_text mt-2">{ project.description }</p>
+              
+              <h5 className="theme_title">{t('modal.functionalities_title')}:</h5>
+              <ul style={{ paddingLeft: '1rem' }} className="mt-3 functionalities">
               {
                 project.functionalities.map(item => 
                   <li key={item} className="theme_text">{ item }</li>
                 )
               }
               </ul>
+             <h5 className="theme_title">{t('modal.subtitle')}:</h5>
+             <div className="mb-5 mt-3 d-flex flex-wrap">
+              {project.tags.map((tag) => (
+                  <span key={tag} className="project-card__tag m-1">
+                    {tag}
+                  </span>
+                ))}
+             </div>
             </div>
 
             <div className="actions d-flex flex-wrap">
                 <a 
-                  href={project.liveDemoSrc} 
+                  href={project.liveUrl} 
                   rel="noreferrer" 
                   target="_blank" 
                   className="mr-2 d-flex justify-content-center align-items-center mb-2 mb-md-0"
                 >
-                  <span className="mr-2">{ project.haveDocs ? 'Documentación' : 'Demostración' }</span>
+                  <span className="mr-2">{ project.haveDocs ? t('modal.docs_button') : t('modal.live_button') }</span>
                   <FaGlobe />
                 </a>
                 <a 
-                  href={project.sourceCodeSrc} 
+                  href={project.githubUrl} 
                   rel="noreferrer" 
                   target="_blank" 
                   className="d-flex justify-content-center align-items-center"
                 >
-                  <span className="mr-2">Ver código</span>
+                  <span className="mr-2">{t('modal.code_button')}</span>
                   <FaGithub />      
                 </a>
             </div>

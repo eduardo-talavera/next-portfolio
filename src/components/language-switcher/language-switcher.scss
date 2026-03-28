@@ -1,0 +1,23 @@
+.language-container {
+  margin-top: -30px;
+  .btn-language {
+    color: white
+  }
+  
+  .language-options {
+    background-color: var(--headerBg);
+    color: white;
+    transition: all .5s ease-in-out;
+    .dropdown-item {
+      color: var(--text);
+      &:hover {
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  .flag {
+    font-size: 1.5rem;
+    margin-right: 0.25rem;
+  }
+}

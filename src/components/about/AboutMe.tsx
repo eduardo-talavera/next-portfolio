@@ -23,31 +23,31 @@ export default function AboutMe() {
   });
 
   const [percents, setPercents] = useState({
-    react: 0,
-    typeScrpt: 0,
-    vue: 0,
-    node: 0,
+    architecture: 0,
+    algorithms: 0,
+    devOps: 0,
+    AI: 0,
   });
 
   const skillSet = [
     {
-      name: "React",
-      percent: percents.react,
+      name: t("architecture"),
+      percent: percents.architecture,
       colors: ["#25b7fa", "#1b6a8eff"],
     },
     {
-      name: "Typescript",
-      percent: percents.typeScrpt,
+      name: t("algorithms"),
+      percent: percents.algorithms,
       colors: ["#17cee6ff", "#0c6971ff"],
     },
     {
-      name: "Vue",
-      percent: percents.vue,
+      name: t("devOps"),
+      percent: percents.devOps,
       colors: ["#17e678ff", "#146e10ff"],
     },
     {
-      name: "Node",
-      percent: percents.node,
+      name: t("AI"),
+      percent: percents.AI,
       colors: ["#a14cecff", "#641b83ff"],
     },
   ];
@@ -58,10 +58,10 @@ export default function AboutMe() {
   useEffect(() => {
     runActionByScroll(900, () => {
       setPercents({
-        react: 90,
-        typeScrpt: 90,
-        vue: 80,
-        node: 80,
+        architecture: 90,
+        algorithms: 80,
+        devOps: 70,
+        AI: 60,
       });
     });
 
@@ -104,23 +104,21 @@ export default function AboutMe() {
             ref={textAboutRef}
           >
             <div className="py-2 py-md-0"></div>
-            <h2 className="theme_title mt-5 mt-md-0 text-center text-md-left">
-              { t("title") }
-            </h2>
+           <div className="d-flex align-items-center mt-5 mt-md-0 justify-content-center justify-content-md-start">
+            <h2 className="theme_title text-center text-md-left">
+                { t("title") } 
+              </h2> <span className="d-none d-md-block h1 ml-3">👽</span>
+           </div>
 
             <div className="text-center text-md-left mb-4 mb-md-0">
               <p className="mt-3 theme_text paragraph_text">
-                Soy un <strong>Desarrollador </strong>
-                con <strong>experiencia solida</strong> en la
-                construcción de aplicaciones web escalables utilizando <strong>React, Vue, 
-                TypeScript y Node.js.</strong> Tengo habilidades en el diseño y desarrollo de
-                <strong> APIs REST y GraphQL</strong>, autenticación de usuarios, manejo de bases
-                de datos relacionales y no relacionales, así como en la
-                implementación de <strong>CI/CD y despliegues en la nube (AWS y Vercel)</strong>.
+                {t.rich('description', {
+                  strong: (chunks) => <strong>{chunks}</strong>
+                })}
                 <br /><br />
-                He participado en proyectos <strong>fintech, educativos y ecommerce</strong>, enfocado en
-                calidad de código, rendimiento, seguridad y toma de decisiones
-                técnicas orientadas al negocio.
+                  {t.rich('description_2', {
+                    strong: (chunks) => <strong>{chunks}</strong>
+                  })}
               </p>
             </div>
           </div>
@@ -130,9 +128,11 @@ export default function AboutMe() {
           <div className="col-11 col-md-8">
             <div className="py-1 py-md-2"></div>
             <div className="mt-5 skills">
-              <h2 className="theme_title text-center text-md-left">
-                Habilidades
-              </h2>
+              <div className="d-flex align-items-center justify-content-center justify-content-md-start">
+                <h2 className="theme_title text-center text-md-left">
+                  { t("skills") }
+                </h2> <span className="h1 d-none ml-3 d-md-inline-block">🧠</span>
+              </div>
               <div className="d-flex flex-wrap justify-content-center pt-5">
                 {skillSet.map((skill) => (
                   <div key={skill.name} style={{ margin: "1rem" }}>
@@ -154,9 +154,11 @@ export default function AboutMe() {
         <div className="py-md-2 py-2"></div>
         <div className="row justify-content-center">
           <div className="col-10 col-md-8 mt-5">
+           <div className="d-flex align-items-center justify-content-center justify-content-md-start">
             <h2 className="theme_title text-center text-md-left">
-              Pila Tecnológica
-            </h2>
+                { t("stack") }
+              </h2> <span className="h1 d-none d-md-inline-block ml-3">🚀</span>
+           </div>
             <TechStack
               skills={skills}
               imgSize={50}

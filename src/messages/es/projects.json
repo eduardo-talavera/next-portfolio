@@ -1,0 +1,66 @@
+{
+  "projects": {
+    "title": "Portafolio",
+    "subtitle_1": "Proyectos",
+    "subtitle_2": "Destacados",
+    "featured": "Destacado",
+    "description": "Aquí hay algunos de los proyectos en los que he trabajado. Cada proyecto muestra mis habilidades y experiencia en diferentes áreas del desarrollo de software.",
+    "filters": {
+      "all": "Todos",
+      "full_stack": "Pila Completa",
+      "creative": "Creativo",
+      "ui_library": "Librería UI"
+    },
+    "tickets_app": {
+      "name": "Aplicación de Tickets",
+      "description": "Una aplicación de gestión de tickets que permite a los usuarios crear, administrar y rastrear tickets de soporte. Incluye características como creación de tickets, asignación, seguimiento de estado e informes.",
+      "functionalities": {
+        "a": "Pruebas unitarias automatizadas",
+        "b": "Autenticación segura mediante JWT cookies only y refreshTokens",
+        "c": "Diseño responsivo adaptado a multiples dispositivos",
+        "d": "Actualización de estado mediante eventos drag and drop",
+        "e": "Implementación de filtros para una mejor organización de los tickets",
+        "f": "Validación de formularios con react-hook-form"
+
+      }
+    },
+    "tropix_ui": {
+      "name": "Tropix UI",
+      "description": "Un sistema de diseño y biblioteca de componentes construido con React y TypeScript. Proporciona un conjunto de componentes de interfaz de usuario reutilizables, como botones, formularios, modales y elementos de navegación, que se pueden integrar fácilmente en aplicaciones web.",
+      "functionalities": {
+        "a": "Diseño de componentes reutilizables y personalizables",
+        "b": "Documentación clara y detallada para cada componente",
+        "c": "Implementación de pruebas unitarias para garantizar la calidad del código",
+        "d": "Optimización del rendimiento mediante técnicas como lazy loading y memoization",
+        "e": "Soporte para temas personalizados y accesibilidad",
+        "f": "Integración CI/CD con GitHub Actions y Semantic Release"
+      
+      }
+    },
+    "twitter_clone": {
+      "name": "Clon de Twitter",
+      "description": "Una plataforma de redes sociales que imita las características principales de Twitter, incluyendo autenticación de usuarios, publicación de tweets y actualizaciones en tiempo real. Está construido usando React para el frontend y Firebase para el backend.",
+      "functionalities": {
+        "a": "Autenticación de usuarios con Firebase Authentication",
+        "b": "Publicación y visualización de tweets en tiempo real utilizando Firestore",
+        "c": "Diseño responsivo para una experiencia óptima en dispositivos móviles y de escritorio"
+      }
+    },
+    "ip_tracker": {
+      "name": "Rastreador de IP",
+      "description": "Una aplicación web que permite a los usuarios rastrear la ubicación y detalles de una dirección IP. Utiliza una API de terceros para obtener datos de geolocalización y los muestra en un mapa interactivo.",
+      "functionalities": {
+        "a": "Integración con una API de geolocalización para obtener datos precisos de ubicación",
+        "b": "Visualización de la ubicación en un mapa interactivo utilizando Leaflet",
+        "c": "Diseño responsivo para una experiencia óptima en dispositivos móviles y de escritorio"
+      }
+    },
+    "modal": {
+      "subtitle": "Tecnologias usadas",
+      "functionalities_title": "Funcionalidades e implementaciones",
+      "live_button": "Ver en vivo",
+      "code_button": "Ver código",
+      "docs_button": "Ver documentación"
+    }
+  }
+}

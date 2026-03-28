@@ -1,17 +1,19 @@
 #menuDesktop {
+  padding-left: 0 !important;
   .active {
     color:#03A9F4 ;
   }
   list-style: none;
   margin: auto;
   min-height: 60px;
-  li{
+  li {
     display: inline-block;
     margin: 0 10px;
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: "JetBrains Mono", monospace;
     &:hover {
-      border-bottom: 2px solid #25b7fa;
+      border-bottom: 4px solid #25b7fa;
     }
   }
 }

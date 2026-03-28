@@ -1,6 +1,6 @@
 'use client';
 
-import { Project, projects } from "@/utils/constants";
+import { Project } from "@/utils/constants";
 import React, { createContext, ReactNode, useContext, useReducer } from "react";
 
 
@@ -24,8 +24,8 @@ export  type GlobalStateContextType = {
 
 
 const initialState: GlobalState = {
-  projects: projects,
-  currentProject: projects[0],
+  projects: [],
+  currentProject: null,
   showProject: false
 }
 

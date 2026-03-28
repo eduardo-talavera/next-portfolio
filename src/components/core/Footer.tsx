@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { use } from 'react';
 import SocialLinks from '../shared/SocialLinks';
+import { useTranslations } from 'next-intl';
 
 function IconArrowUpRight() {
   return (
@@ -25,6 +26,8 @@ export default function Footer() {
   const handleEmail = () => {
     window.location.href = "mailto:edgar.developer.talavera77@gmail.com?subject=Contacto&body=Hola quiero contactarte para hablar sobre un proyecto.";
   };
+
+  const t = useTranslations("footer");
   
 
   return (
@@ -34,15 +37,15 @@ export default function Footer() {
         
         <div className="col-12 col-md-6">
           <div className="text-center text-md-left mb-4 mt-5 mt-md-0">
-            <h4 className='mb-4 theme_title'>Contacto</h4>
+            <h4 className='mb-4 theme_title'>{t('contact')}</h4>
             
               {/* Footer CTA */}
               <div className="portfolio__cta">
               <p className="portfolio__cta-text">
-                ¿Interesado en trabajar juntos?
+                {t('question')}
               </p>
               <button className="portfolio__cta-btn" onClick={handleEmail}>
-                Contáctame <IconArrowUpRight />
+                {t('call_to_action')} <IconArrowUpRight />
               </button>
             </div>
             
@@ -55,7 +58,7 @@ export default function Footer() {
 
         <div className="col-12 col-md-4">
           <div className="text-center mb-4 mt-5 mt-md-0">
-            <h4 className='mb-4 theme_title'>Mis redes sociales</h4>
+            <h4 className='mb-4 theme_title'>{t('social')}</h4>
             <SocialLinks/>
           </div>
         </div>

@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   background: var(--background);
-  font-family: 'Lato', arial, sans-serif;
+  font-family: "JetBrains Mono", monospace;
   // font-family: 'Roboto', sans-serif;
   font-size: 16px;
   // color: #434343;
@@ -113,7 +113,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   // font-family: 'Montserrat', sans-serif;
-  font-family: 'Lato', arial, sans-serif;
+  //font-family: 'Lato', arial, sans-serif;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 700;
   color: #d0d3d6;
 }
@@ -197,7 +198,7 @@ a {
 }
 
 .btn, a.btn {
-  font-family: 'Montserrat', arial, sans-serif;
+  font-family: "JetBrains Mono", monospace;;
   padding: 8px 16px;
   font-weight: bold;
 }
@@ -245,27 +246,28 @@ a {
   position: fixed;
   height: 70px;
   z-index: 3;
-  padding: 20px 100px;
+  padding: 20px 0;
   width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
   transition: all .5s ease-in-out;
 
+  .header-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all .5s ease-in-out;
+  }
 
   @media (max-width: 799px) {
     position: static;
   }
 
   .btn {
-    margin-top: 60px;
     font-weight: bold;
   }
 
   .logo {
     width: 135px;
-    margin: auto;
+    margin: 0;
   }
 
   .profile-content {
@@ -278,7 +280,8 @@ a {
 
     .desc {
       color: #a2b9d2;
-      font-family: "Lato", arial, sans-serif;
+      //font-family: "Lato", arial, sans-serif;
+      font-family: "JetBrains Mono", monospace;;
       font-weight: 400;
       font-size: 24px;
       margin-top: 0;
@@ -292,7 +295,8 @@ a {
     .desc-mini {
       color: #a2b9d2;
       // color:#778492;
-      font-family: "Lato", arial, sans-serif;
+      //font-family: "Lato", arial, sans-serif;
+      font-family: "JetBrains Mono", monospace;
       font-weight: 400;
       font-size: 25px;
       margin-top: 0;
@@ -305,12 +309,30 @@ a {
 }
 
 .header_fixed {
-  padding: 5px 100px 3px 100px;
+  padding: 5px 0 3px 0;
   background: var(--headerBg);
   box-shadow: 0 5px 9px -8px rgb(22, 22, 22);
   transition: all .5s ease-in-out;
 
+  .header-content {
+    margin-top: -25px;
+    transition: all .5s ease-in-out;
+  }
+
   a, svg {
+    color: var(--text) !important;
+  }
+
+  .language-options {
+    background-color: var(--headerBg) !important;
+    color: var(--text) !important;
+    margin-top: 1rem !important;
+    .dropdown-item {
+      color: var(--text) !important;
+    }
+  }
+  
+  .btn-language {
     color: var(--text) !important;
   }
 }
@@ -369,11 +391,6 @@ a {
     .profile-content {
       float: none !important;
       text-align: center;
-    }
-
-    .btn {
-      margin-top: 30px;
-      float: none !important;
     }
   }
 

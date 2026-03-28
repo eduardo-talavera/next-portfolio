@@ -1,25 +1,24 @@
-'use client';
+"use client";
 
 import { ReactNode, FC, useEffect, useState } from "react";
 import Menu from "./Menu";
 import MenuDesktop from "./MenuDesktop";
 import Footer from "./Footer";
-import logo from "@/static/img/et-dev-logo.webp";
+import logo from "@/static/img/logo-definitivo.png";
 import { useThemeMode } from "tropix-ui";
-import logoLightTheme from '@/static/img/logo-dev-2-removebg.webp'
 import SocialLinks from "../shared/SocialLinks";
 import Image from "next/image";
-import { ThemeToggle } from "../shared/ThemeToggle";
+import { ThemeToggle } from "../shared/teme-toggle/ThemeToggle";
 import { useTheme } from "@/context/ThemeContext";
 import dynamic from "next/dynamic";
 import { useGlobalState } from "@/context/GlobalStateContext";
 import { Project } from "@/utils/constants";
-import LanguageSwitcher from "../LanguageSwitcher";
+import LanguageSwitcher from "../language-switcher/LanguageSwitcher";
 
 const Modal = dynamic(() => import("../portfolio/Modal"));
 
 interface HomeLayoutProps {
-  children: ReactNode | ReactNode[]
+  children: ReactNode | ReactNode[];
 }
 
 function clickHandler(e: Event) {
@@ -38,24 +37,25 @@ function clickHandler(e: Event) {
 }
 
 function scrollEfect(setHeaderFixed: (value: boolean) => void) {
-  const header = document.getElementById('intro');
+  const header = document.getElementById("intro");
 
-  window.onscroll = function() {
-    const scroll = document.documentElement.scrollTop || document.body.scrollTop;
+  window.onscroll = function () {
+    const scroll =
+      document.documentElement.scrollTop || document.body.scrollTop;
 
     if (scroll > 105 && header && window.screen.width > 799) {
-     header.classList.add('header_fixed');
-     setHeaderFixed(true)
-    } else if (header && header.classList.contains('header_fixed')) {
-      header.classList.remove('header_fixed');
+      header.classList.add("header_fixed");
+      setHeaderFixed(true);
+    } else if (header && header.classList.contains("header_fixed")) {
+      header.classList.remove("header_fixed");
       setHeaderFixed(false);
     }
-  }
+  };
 }
 
 function smothScroll() {
   const links = document.querySelectorAll("#menuDesktop li a");
-  const linksM = document.querySelectorAll("#menu li a"); 
+  const linksM = document.querySelectorAll("#menu li a");
   for (const link of links) {
     link.addEventListener("click", clickHandler);
   }
@@ -65,7 +65,6 @@ function smothScroll() {
 }
 
 const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
-
   const [headerFixed, setHeaderFixed] = useState(false);
 
   const { theme } = useTheme();
@@ -76,51 +75,58 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
   useEffect(() => {
     scrollEfect(setHeaderFixed);
     smothScroll();
-    if (theme === 'dark') setIsDark(true)
-    else setIsDark(false)  
+    if (theme === "dark") setIsDark(true);
+    else setIsDark(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
-      {
-        showProject && <>
-          <Modal 
-            project={currentProject as Project} 
+      {showProject && (
+        <>
+          <Modal
+            project={currentProject as Project}
             onClickOutside={closeProject}
           />
         </>
-      }
+      )}
 
-      <div 
-        id="hero"
-      >
+      <div id="hero">
         <div id="capa">
           <div className="d-md-none">
             <Menu />
           </div>
+
           <header id="intro" className="header pl-xl-5">
-            <div className="clearfix mt-xl-0">
-              <Image
-                className="logo float-left mb-5 mt-5 pt-5 pt-md-1 mt-md-0 mr-md-3"
-                src={(theme === 'light' && headerFixed) ? logoLightTheme : logo}
-                alt="logo"
-                width={135}
-                height={52.18}
-                style={{ height: 'auto' }}
-                priority
-              />
-             
-            </div>
-            <div className="d-none d-md-block">
-              <div className="d-flex">
+            <div className="header-content">
+              <div className="mt-2">
+                <Image
+                  className="d-none d-md-block logo float-left mb-5 mt-5 pt-5 pt-md-1 mt-md-0 mr-md-3"
+                  //src={(theme === 'light' && headerFixed) ? logoLightTheme : logo}
+                  src={logo}
+                  alt="logo"
+                  width={1080}
+                  height={1080}
+                  style={{ height: "auto" }}
+                  priority
+                />
+              </div>
+
+              <div className="d-none d-md-block">
                 <MenuDesktop />
-                <ThemeToggle className='ml-5' />
+              </div>
+
+              <div className="align-items-center d-none d-md-flex">
                 <LanguageSwitcher />
+                <ThemeToggle />
+              </div>
+
+              <div className="theme_toggle_and_language_mobile d-md-none d-flex align-items-center">
+                <LanguageSwitcher />
+                <ThemeToggle />
               </div>
             </div>
-            <ThemeToggle className='d-md-none d-block theme_toggle_mobile' />
           </header>
-
 
           <section
             id="welcome"
@@ -130,7 +136,9 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
               <div className="row justify-content-center align-items center">
                 <div className="col-12 col-md-10">
                   <div className="text-center">
-                    <h1 className="mt-4 pt-5 pt-md-0 welcome__name text-white bold">Edgar Eduardo Talavera</h1>
+                    <h1 className="mt-4 pt-5 pt-md-0 welcome__name text-white bold">
+                    Edgar Eduardo Talavera <span className="d-none d-md-inline-block">👾</span>
+                    </h1>
                     <div id="text-welcome" className="mt-3"></div>
                     <div className="mt-3">
                       <SocialLinks mini />
@@ -143,10 +151,10 @@ const HomeLayout: FC<HomeLayoutProps> = ({ children }) => {
         </div>
       </div>
       <div>{children}</div>
-     <div style={{ position: 'relative' }}>
-      <div className="wave-footer"></div>
-      <Footer />
-     </div>
+      <div style={{ position: "relative" }}>
+        <div className="wave-footer"></div>
+        <Footer />
+      </div>
     </>
   );
 };

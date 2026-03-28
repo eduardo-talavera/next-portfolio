@@ -1,6 +1,9 @@
 'use client';
 
+import { useTranslations } from "next-intl";
+
 function MenuDesktop() {
+  const t = useTranslations("menu");
   return (
     <div>
       <ul id="menuDesktop">
@@ -8,21 +11,21 @@ function MenuDesktop() {
           <a className="link-menu"
             href="#capa"
           >
-            Inicio
+            {t("home")}
           </a>
         </li>
         <li>
           <a className="link-menu"
             href="#about"
            >
-            Sobre mi
+            {t("about")}
           </a>
         </li>
         <li>
           <a className="link-menu"
             href="#portfolio"
           >
-           Portafolio
+            {t("projects")}
           </a>
         </li>
       </ul>

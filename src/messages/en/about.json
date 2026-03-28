@@ -1,6 +1,13 @@
 {
   "about": {
     "title": "About me",
-    "description": "Application with multilingual support"
+    "description": "I am a <strong>developer</strong> with <strong>solid experience</strong> building scalable web applications using <strong>React, Vue, TypeScript, and Node.js.</strong> I have skills in designing and developing <strong>REST and GraphQL APIs</strong>, user authentication, managing relational and non-relational <strong>databases</strong>, and implementing <strong>CI/CD</strong> and deploying to the cloud (<strong>AWS</strong> and <strong>Vercel</strong>).",
+    "description_2": "I have participated in <strong>fintech, education, and e-commerce</strong> projects, focusing on <strong>code quality, performance, security</strong>, and making business-oriented technical decisions.",
+    "skills": "Skills",
+    "architecture": "Architecture",
+    "algorithms": "Algorithms",
+    "devOps": "DevOps",
+    "AI": "AI Tools",
+    "stack": "Tech Stack"
   }
 }

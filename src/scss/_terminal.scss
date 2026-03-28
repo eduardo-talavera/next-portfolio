@@ -65,7 +65,8 @@
       margin: 1rem;
       display: flex;
       flex-direction: column;
-      font-family: monospace;
+      //font-family: monospace;
+      font-family: "JetBrains Mono", monospace;;
 
       .body__item_title {
         color: var(--terminalPrompt);

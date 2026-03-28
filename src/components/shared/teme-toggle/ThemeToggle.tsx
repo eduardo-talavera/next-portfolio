@@ -4,6 +4,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { HTMLAttributes } from 'react';
 import { LuMoon, LuSun } from 'react-icons/lu';
 import { useThemeMode } from 'tropix-ui';
+import './theme-toggle.scss';
 
 export interface ThemeToggleProps extends HTMLAttributes<HTMLDivElement>{
   className?: string

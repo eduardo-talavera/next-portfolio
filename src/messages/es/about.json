@@ -1,6 +1,13 @@
 {
   "about": {
-    "title": "Sobre mí",
-    "description": "Aplicación con soporte multilenguaje"
+    "title": "Acerca de mi",
+    "description": "Soy un <strong>Desarrollador</strong> con <strong>experiencia solida</strong> en la construcción de aplicaciones web escalables utilizando <strong>React, Vue, TypeScript y Node.js</strong>. Tengo habilidades en el diseño y desarrollo de <strong>APIs REST</strong>, <strong>GraphQL</strong>, <strong>autenticación de usuarios</strong>, manejo de <strong>bases de datos relacionales</strong> y no relacionales, así como en la implementación de <strong>CI/CD</strong> y despliegues en la nube (<strong>AWS</strong> y <strong>Vercel</strong>).",
+    "description_2": "He participado en proyectos de fintech, educativos y comercio electrónico, enfocándome en la <strong>calidad del código, el rendimiento, la seguridad</strong> y toma de decisiones técnicas orientadas al negocio.",
+    "skills": "Habilidades",
+    "architecture": "Arquitectura",
+    "algorithms": "Algoritmos",
+    "devOps": "DevOps",
+    "AI": "IA",
+    "stack": "Pila Tecnológica"
   }
 }
