@@ -21,7 +21,6 @@
         "d": "Actualización de estado mediante eventos drag and drop",
         "e": "Implementación de filtros para una mejor organización de los tickets",
         "f": "Validación de formularios con react-hook-form"
-
       }
     },
     "tropix_ui": {
@@ -34,7 +33,6 @@
         "d": "Optimización del rendimiento mediante técnicas como lazy loading y memoization",
         "e": "Soporte para temas personalizados y accesibilidad",
         "f": "Integración CI/CD con GitHub Actions y Semantic Release"
-      
       }
     },
     "twitter_clone": {

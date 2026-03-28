@@ -236,13 +236,13 @@ const projects: Project[] = [
     githubUrl: "https://github.com/eduardo-talavera/issues-app-frontend",
     featured: true,
     functionalities: [
-      t('tickets_app.functionalities.a'), 
-      t('tickets_app.functionalities.b'),
-      t('tickets_app.functionalities.c'),
-      t('tickets_app.functionalities.d'),
-      t('tickets_app.functionalities.e'),
-      t('tickets_app.functionalities.f'),
-    ] || [],
+      t('tickets_app.functionalities.a') ?? '', 
+      t('tickets_app.functionalities.b') ?? '',
+      t('tickets_app.functionalities.c') ?? '',
+      t('tickets_app.functionalities.d') ?? '',
+      t('tickets_app.functionalities.e') ?? '',
+      t('tickets_app.functionalities.f') ?? '',
+    ],
   },
   {
     id: 2,
@@ -256,14 +256,13 @@ const projects: Project[] = [
     githubUrl: "https://github.com/eduardo-talavera/tropix-ui",
     featured: true,
     functionalities: [
-      t('tropix_ui.functionalities.a'),
-      t('tropix_ui.functionalities.b'),
-      t('tropix_ui.functionalities.c'),
-      t('tropix_ui.functionalities.d'),
-      t('tropix_ui.functionalities.e'),
-      t('tropix_ui.functionalities.f'),
-    ] || [
-    ],
+      t('tropix_ui.functionalities.a') ?? '',
+      t('tropix_ui.functionalities.b') ?? '',
+      t('tropix_ui.functionalities.c') ?? '',
+      t('tropix_ui.functionalities.d') ?? '',
+      t('tropix_ui.functionalities.e') ?? '',
+      t('tropix_ui.functionalities.f') ?? '',
+    ]
   },
   {
     id: 3,
@@ -277,11 +276,10 @@ const projects: Project[] = [
     githubUrl: '',
     featured: false,
     functionalities: [
-      t('twitter_clone.functionalities.a'),
-      t('twitter_clone.functionalities.b'),
-      t('twitter_clone.functionalities.c')
-    ] || [
-    ],
+      t('twitter_clone.functionalities.a') ?? '',
+      t('twitter_clone.functionalities.b') ?? '',
+      t('twitter_clone.functionalities.c') ?? '',
+    ]
   },
   {
     id: 4,
@@ -294,10 +292,9 @@ const projects: Project[] = [
     liveUrl: "https://ip-tracker64.netlify.app/",
     githubUrl: "",
     functionalities: [
-      t('ip_tracker.functionalities.a'),
-      t('ip_tracker.functionalities.b'),
-      t('ip_tracker.functionalities.c')
-    ] || [
+      t('ip_tracker.functionalities.a') ?? '',
+      t('ip_tracker.functionalities.b') ?? '',
+      t('ip_tracker.functionalities.c') ?? ''
     ],
   },
   // {
@@ -362,7 +359,7 @@ const projects: Project[] = [
   //   liveUrl: "#",
   //   githubUrl: "#",
   // },
-];
+].filter(Boolean) as Project[];
 
   const filtered =
     activeFilter === 'All' || activeFilter === 'Todos'

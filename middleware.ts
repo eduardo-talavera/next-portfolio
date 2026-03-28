@@ -1,14 +1,21 @@
+
 import createMiddleware from 'next-intl/middleware';
-import { routing } from './src/i18n/routing';
 import { NextRequest } from 'next/server';
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware({
+  locales: ['es', 'en'],
+  defaultLocale: 'es'
+});
 
-export const config = {
-  matcher: ['/((?!api|_next|.*\\..*).*)']
-};
+export default function middleware(req: NextRequest) {
+  const url = req.nextUrl;
 
-export function middleware(req: NextRequest) {
-  console.log('MIDDLEWARE RUNNING:', req.nextUrl.pathname);
-  return createMiddleware(routing)(req);
+  if (url.pathname === '/') {
+    const lang = req.headers.get('accept-language');
+    const locale = lang?.startsWith('en') ? 'en' : 'es';
+
+    return Response.redirect(new URL(`/${locale}`, req.url));
+  }
+
+  return intlMiddleware(req);
 }
